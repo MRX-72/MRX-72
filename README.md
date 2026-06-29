@@ -16,7 +16,7 @@ Adversarial testing, low-level optimization, and automation.
 ## Open Source
 
 **Core Maintainer, @OWASP**
-* Invited maintainer at OWASP.
+* Invited maintainer at OWASP, cve-lite-cli
 
 ---
 
