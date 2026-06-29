@@ -1,8 +1,6 @@
-# [MrX]
+# AI Red Teamer | Systems Engineer
 
-AI Red Teamer | Systems Engineer
-
-Building and securing systems through adversarial testing, low-level optimization, and automation.
+Adversarial testing, low-level optimization, and automation.
 
 ---
 
