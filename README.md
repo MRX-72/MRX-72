@@ -1,16 +1,35 @@
-## Hi there 👋
+# [MrX]
 
-<!--
-**MRX-72/MRX-72** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+AI Red Teamer | Systems Engineer
 
-Here are some ideas to get you started:
+Building and securing systems through adversarial testing, low-level optimization, and automation.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## Technical Stack
+
+* **Languages:** C++, Golang, Python, x86_64 Assembly
+* **Area of Focus:** AI Red Teaming, Offensive Security, Vulnerability Analysis
+* **LLM Systems & Compute:** Inference optimization (vLLM, llama.cpp), Writing custom cuda kernals, and custom RAG architectures
+* **Systems & Automation:** Linux internals, n8n orchestration, low-level networking, socket propgramming
+
+---
+
+## Open Source
+
+**Core Maintainer, @OWASP**
+* Invited maintainer at OWASP.
+
+---
+
+## Current Work
+
+* **AI Red Teaming:** With OWASP Top 10 (LLM) as the backbone
+* **Inference Engineering:** Optimzing Local LLMs to minimize latency and maxize quality but writing custom cuda kernals and inference engines in C++
+* **Systems Programming:** Writing low-level Linux utilities and orchestrating secure, automated infrastructure workflows using Golang, C++, and n8n.
+
+---
+
+## Contact
+
+* Email: theaiguy369@gmail.com
