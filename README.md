@@ -8,21 +8,6 @@ Adversarial testing, low-level optimization, automation, and quantitative resear
 
 All three are **verified, not assumed** — each blurb pairs a plain-language pitch with the internals.
 
-### [QFcli](https://github.com/MRX-72/QFcli)
-
-*Yahoo Finance data in, trustworthy numbers out — including the red flags when those numbers should not be trusted.*
-
-A command-line quantitative research workbench for stock analysis, strategy backtesting, and portfolio optimization. Signals are shifted one bar (**no lookahead**), realistic cost/slippage is charged against turnover, and every run reports alpha / active return / information ratio against buy-and-hold — so a strategy that doesn't add value says so.
-
-Deeper terms: **walk-forward** out-of-sample validation with parameter grids and **ensemble blending** (`equal` / `rank` / `topk`), a **paper-trading harness** with a **hysteresis stability filter** (`--stable-days`), **target-vol and fractional-Kelly position sizing** with a **slow-vol, Moreira–Muir style overlay** (`--slow-vol-window`), and portfolio math built on **shrinkage covariance**, **PCA factor risk models**, **Black-Litterman** with absolute views and a **Fama-French factor prior**, plus **Monte Carlo / bootstrap / Jobson–Korkie** significance tests. Pure **numpy/pandas**, no scipy, offline test suite, deterministic `--json` output.
-
-```bash
-qfcli AAPL --period 5y              # single-stock analysis: metrics, stats, regime
-qfcli --backtest AAPL --walk-forward --ensemble rank --grid "fast=10,20;slow=40,60"
-qfcli --portfolio AAPL MSFT NVDA --bl --view NVDA=0.18 --ff   # Black-Litterman + factor overlay
-qfcli --paper-trade AAPL --stable-days 5                      # monitor — it does not place orders
-```
-
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
 *Pinpoint where an LLM's guardrails crack — deterministically, not by judge-model opinion.*
@@ -45,6 +30,19 @@ bypass where a model refuses and complies in the same reply.
 lrtf scan gpt-4o --tui              # live view
 lrtf scan gpt-4o --system mine.txt  # test your own prompt
 lrtf diff base.json current.json    # did the fix work?
+```
+
+### [QFcli](https://github.com/MRX-72/QFcli)
+
+A command-line quantitative research workbench for stock analysis, strategy backtesting, and portfolio optimization. Signals are shifted one bar (**no lookahead**), realistic cost/slippage is charged against turnover, and every run reports alpha / active return / information ratio against buy-and-hold — so a strategy that doesn't add value says so.
+
+Deeper terms: **walk-forward** out-of-sample validation with parameter grids and **ensemble blending** (`equal` / `rank` / `topk`), a **paper-trading harness** with a **hysteresis stability filter** (`--stable-days`), **target-vol and fractional-Kelly position sizing** with a **slow-vol, Moreira–Muir style overlay** (`--slow-vol-window`), and portfolio math built on **shrinkage covariance**, **PCA factor risk models**, **Black-Litterman** with absolute views and a **Fama-French factor prior**, plus **Monte Carlo / bootstrap / Jobson–Korkie** significance tests. Pure **numpy/pandas**, no scipy, offline test suite, deterministic `--json` output.
+
+```bash
+qfcli AAPL --period 5y              # single-stock analysis: metrics, stats, regime
+qfcli --backtest AAPL --walk-forward --ensemble rank --grid "fast=10,20;slow=40,60"
+qfcli --portfolio AAPL MSFT NVDA --bl --view NVDA=0.18 --ff   # Black-Litterman + factor overlay
+qfcli --paper-trade AAPL --stable-days 5                      # monitor — it does not place orders
 ```
 
 ### [zapscan](https://github.com/MRX-72/zapscan)
