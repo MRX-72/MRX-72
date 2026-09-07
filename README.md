@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/OWASP/cve-lite-cli"><img src="https://img.shields.io/badge/OWASP-invited%20maintainer-000000?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP" /></a>
+  <img src="https://img.shields.io/badge/x86__64%20Assembly-6E4C13?style=for-the-badge" alt="x86_64 Assembly" />
   <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />
