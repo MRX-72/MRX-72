@@ -5,7 +5,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/MRX-72"><img src="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats.svg" alt="GitHub stats" width="470" /></a>
+  <a href="https://github.com/MRX-72">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats-dark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats-light.svg" />
+      <img src="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats-dark.svg" alt="GitHub stats" width="470" />
+    </picture>
+  </a>
 </p>
 
 <p align="center">

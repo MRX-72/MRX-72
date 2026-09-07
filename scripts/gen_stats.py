@@ -18,8 +18,15 @@ USER = "MRX-72"
 TOKEN = os.environ.get("GH_TOKEN", "")
 YEAR = dt.date.today().year
 
-# react theme, to match what the profile used before
-BG, TITLE, TEXT, ICON, RING = "#20232a", "#61dafb", "#ffffff", "#61dafb", "#61dafb"
+# GitHub's own palettes, so the card sits in the page rather than on it.
+# Two files are rendered and selected by <picture> in the README; GitHub honours
+# prefers-color-scheme there, which it does not do reliably inside a single SVG.
+THEMES = {
+    "dark":  dict(bg="#0d1117", title="#58a6ff", text="#c9d1d9",
+                  accent="#58a6ff", border="#30363d"),
+    "light": dict(bg="#ffffff", title="#0969da", text="#1f2328",
+                  accent="#0969da", border="#d1d9e0"),
+}
 
 
 def api(path: str) -> dict:
@@ -142,6 +149,13 @@ def main() -> None:
         ("Followers", str(user["followers"])),
     ]
 
+    for name, t in THEMES.items():
+        render(name, t, stats, letter, percentile)
+    print("\n".join(f"{k}: {v}" for k, v in stats))
+    print(f"Rank: {letter} (arc {percentile:.1f})")
+
+
+def render(name: str, t: dict, stats: list, letter: str, percentile: float) -> None:
     rows = "".join(
         f'<g transform="translate(0,{i*26})">'
         f'<text x="0" y="0" class="k">{k}:</text>'
@@ -156,26 +170,24 @@ def main() -> None:
 
     svg = f'''<svg width="500" height="195" viewBox="0 0 500 195" xmlns="http://www.w3.org/2000/svg">
 <style>
-  .t {{ font: 600 18px 'Segoe UI',Ubuntu,sans-serif; fill: {TITLE} }}
-  .k {{ font: 600 14px 'Segoe UI',Ubuntu,sans-serif; fill: {TEXT} }}
-  .v {{ font: 700 14px 'Segoe UI',Ubuntu,sans-serif; fill: {ICON} }}
-  .r {{ font: 800 26px 'Segoe UI',Ubuntu,sans-serif; fill: {TEXT}; text-anchor: middle }}
-  .track {{ stroke: {RING}; stroke-width: 6; fill: none; opacity: 0.25 }}
-  .prog {{ stroke: {RING}; stroke-width: 6; fill: none; stroke-linecap: round;
+  .t {{ font: 600 18px 'Segoe UI',Ubuntu,sans-serif; fill: {t['title']} }}
+  .k {{ font: 600 14px 'Segoe UI',Ubuntu,sans-serif; fill: {t['text']} }}
+  .v {{ font: 700 14px 'Segoe UI',Ubuntu,sans-serif; fill: {t['accent']} }}
+  .r {{ font: 800 26px 'Segoe UI',Ubuntu,sans-serif; fill: {t['text']}; text-anchor: middle }}
+  .track {{ stroke: {t['accent']}; stroke-width: 6; fill: none; opacity: 0.25 }}
+  .prog {{ stroke: {t['accent']}; stroke-width: 6; fill: none; stroke-linecap: round;
            stroke-dasharray: {filled:.1f} {circumference:.1f};
            transform: rotate(-90deg); transform-origin: 405px 100px }}
 </style>
-<rect width="499" height="194" x="0.5" y="0.5" rx="6" fill="{BG}" stroke="{BG}"/>
+<rect width="499" height="194" x="0.5" y="0.5" rx="6" fill="{t['bg']}" stroke="{t['border']}"/>
 <text x="25" y="35" class="t">{USER}'s GitHub Stats</text>
 <g transform="translate(25,70)">{rows}</g>
 <circle cx="405" cy="100" r="{R}" class="track"/>
 <circle cx="405" cy="100" r="{R}" class="prog"/>
 <text x="405" y="110" class="r">{letter}</text>
 </svg>'''
-    with open("stats.svg", "w") as f:
+    with open(f"stats-{name}.svg", "w") as f:
         f.write(svg)
-    print("\n".join(f"{k}: {v}" for k, v in stats))
-    print(f"Rank: {letter} (arc {percentile:.1f})")
 
 
 if __name__ == "__main__":
