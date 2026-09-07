@@ -22,10 +22,10 @@ YEAR = dt.date.today().year
 # Two files are rendered and selected by <picture> in the README; GitHub honours
 # prefers-color-scheme there, which it does not do reliably inside a single SVG.
 THEMES = {
-    "dark":  dict(bg="#0d1117", title="#58a6ff", text="#c9d1d9",
-                  accent="#58a6ff", border="#30363d"),
-    "light": dict(bg="#ffffff", title="#0969da", text="#1f2328",
-                  accent="#0969da", border="#d1d9e0"),
+    "dark":  dict(bg="#0d1117", bg2="#161b22", title="#58a6ff", text="#c9d1d9",
+                  accent="#58a6ff", accent2="#a371f7", border="#30363d"),
+    "light": dict(bg="#ffffff", bg2="#f6f8fa", title="#0969da", text="#1f2328",
+                  accent="#0969da", accent2="#8250df", border="#d1d9e0"),
 }
 
 
@@ -170,20 +170,35 @@ def render(name: str, t: dict, stats: list, letter: str, percentile: float) -> N
 
     svg = f'''<svg width="500" height="195" viewBox="0 0 500 195" xmlns="http://www.w3.org/2000/svg">
 <style>
-  .t {{ font: 600 18px 'Segoe UI',Ubuntu,sans-serif; fill: {t['title']} }}
+  .t {{ font: 600 18px 'Segoe UI',Ubuntu,sans-serif; fill: url(#heading) }}
   .k {{ font: 600 14px 'Segoe UI',Ubuntu,sans-serif; fill: {t['text']} }}
   .v {{ font: 700 14px 'Segoe UI',Ubuntu,sans-serif; fill: {t['accent']} }}
   .r {{ font: 800 26px 'Segoe UI',Ubuntu,sans-serif; fill: {t['text']}; text-anchor: middle }}
   .track {{ stroke: {t['accent']}; stroke-width: 6; fill: none; opacity: 0.25 }}
-  .prog {{ stroke: {t['accent']}; stroke-width: 6; fill: none; stroke-linecap: round;
+  .prog {{ stroke: url(#arc); stroke-width: 6; fill: none; stroke-linecap: round;
            stroke-dasharray: {filled:.1f} {circumference:.1f};
            transform: rotate(-90deg); transform-origin: 405px 100px }}
 </style>
-<rect width="499" height="194" x="0.5" y="0.5" rx="6" fill="{t['bg']}" stroke="{t['border']}"/>
+<defs>
+  <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="{t['bg2']}"/><stop offset="100%" stop-color="{t['bg']}"/>
+  </linearGradient>
+  <linearGradient id="arc" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="{t['accent']}"/><stop offset="100%" stop-color="{t['accent2']}"/>
+  </linearGradient>
+  <linearGradient id="heading" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="{t['title']}"/><stop offset="100%" stop-color="{t['accent2']}"/>
+  </linearGradient>
+</defs>
+<rect width="499" height="194" x="0.5" y="0.5" rx="6" fill="url(#ground)" stroke="{t['border']}"/>
 <text x="25" y="35" class="t">{USER}'s GitHub Stats</text>
 <g transform="translate(25,70)">{rows}</g>
 <circle cx="405" cy="100" r="{R}" class="track"/>
-<circle cx="405" cy="100" r="{R}" class="prog"/>
+<circle cx="405" cy="100" r="{R}" class="prog">
+  <animate attributeName="stroke-dasharray" from="0 {circumference:.1f}"
+           to="{filled:.1f} {circumference:.1f}" dur="1s"
+           calcMode="spline" keySplines="0.2 0 0.2 1" fill="freeze"/>
+</circle>
 <text x="405" y="110" class="r">{letter}</text>
 </svg>'''
     with open(f"stats-{name}.svg", "w") as f:
