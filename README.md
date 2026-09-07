@@ -6,8 +6,6 @@ Adversarial testing, low-level optimization, automation, and quantitative resear
 
 ## Featured
 
-All three are **verified, not assumed** — each blurb pairs a plain-language pitch with the internals.
-
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
 *Pinpoint where an LLM's guardrails crack — deterministically, not by judge-model opinion.*
