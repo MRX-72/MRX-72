@@ -36,7 +36,7 @@ lrtf diff base.json current.json    # did the fix work?
 * **Focus:** AI Red Teaming, LLM Security, Offensive Security, Vulnerability Analysis
 * **LLM Red Teaming:** prompt injection, jailbreak & encoding-bypass vectors, system-prompt extraction, OWASP LLM Top 10 mapping, canary-based deterministic detection, multi-turn attack chains
 * **Agentic AI Security:** memory-poisoning surfaces (LangChain / ChromaDB / Mem0), RAG & retrieval security, tool-use and excessive-agency attacks
-* **Offensive Security:** vulnerability analysis, recon and port scanning, low-level networking
+* **Offensive Security:** network recon & port scanning (C++17, [`zapscan`](https://github.com/MRX-72/zapscan)), dependency vulnerability analysis & CVE identification (invited maintainer, [`OWASP/cve-lite-cli`](https://github.com/OWASP/cve-lite-cli)), low-level socket programming and request pacing for adversarial tooling
 * **Systems & Automation:** Linux internals, socket programming, n8n orchestration
 
 ---
