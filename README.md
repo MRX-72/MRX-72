@@ -6,7 +6,7 @@ Adversarial testing, low-level optimization, and automation.
 
 ## Featured
 
-### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli) · `pip install llm-red-team-cli`
+### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
 Adversarial test harness for LLM applications. **107 vectors across 10 categories**
 mapped to the OWASP LLM Top 10 — prompt injection, jailbreaks, encoding bypass,
