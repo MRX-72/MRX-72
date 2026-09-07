@@ -8,6 +8,8 @@ Adversarial testing, low-level optimization, automation, and quantitative resear
 
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
+[![CI](https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE)
+
 *Pinpoint where an LLM's guardrails crack — deterministically, not by judge-model opinion.*
 
 Adversarial test harness for LLM applications. **107 vectors across 10 categories**
@@ -32,6 +34,8 @@ lrtf diff base.json current.json    # did the fix work?
 
 ### [QFcli](https://github.com/MRX-72/QFcli)
 
+[![CI](https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg)](https://github.com/MRX-72/QFcli/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/MRX-72/QFcli/blob/main/LICENSE)
+
 A command-line quantitative research workbench for stock analysis, strategy backtesting, and portfolio optimization. Signals are shifted one bar (**no lookahead**), realistic cost/slippage is charged against turnover, and every run reports alpha / active return / information ratio against buy-and-hold — so a strategy that doesn't add value says so.
 
 Deeper terms: **walk-forward** out-of-sample validation with parameter grids and **ensemble blending** (`equal` / `rank` / `topk`), a **paper-trading harness** with a **hysteresis stability filter** (`--stable-days`), **target-vol and fractional-Kelly position sizing** with a **slow-vol, Moreira–Muir style overlay** (`--slow-vol-window`), and portfolio math built on **shrinkage covariance**, **PCA factor risk models**, **Black-Litterman** with absolute views and a **Fama-French factor prior**, plus **Monte Carlo / bootstrap / Jobson–Korkie** significance tests. Pure **numpy/pandas**, no scipy, offline test suite, deterministic `--json` output.
@@ -44,6 +48,8 @@ qfcli --paper-trade AAPL --stable-days 5                      # monitor — it d
 ```
 
 ### [zapscan](https://github.com/MRX-72/zapscan)
+
+[![CI](https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg)](https://github.com/MRX-72/zapscan/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/MRX-72/zapscan/blob/main/LICENSE)
 
 *The no-dependency way to see what is listening on a network.*
 
