@@ -28,6 +28,29 @@ lrtf scan gpt-4o --system mine.txt  # test your own prompt
 lrtf diff base.json current.json    # did the fix work?
 ```
 
+### [zapscan](https://github.com/MRX-72/zapscan)
+
+Native parallel TCP port scanner in **C++17** — no `nmap` underneath. Connections
+are made with non-blocking `connect()` and awaited through `poll()`, from a
+bounded worker pool with deterministic concurrency, so scanning the same range
+twice behaves the same twice.
+
+Recon done properly: targets parse as **IPs, hostnames, CIDR blocks, and ranges**,
+ports as `80`, `1-1000`, or `22,80,443-900` with deduplication, and everything is
+validated up front — invalid input aborts before a single packet is sent. Open
+ports get a **banner grab** reconnecting and reading up to 2 KB. Output is either
+text or machine-parsable **JSON**, with banners sanitized to printable characters.
+
+The scanner is **verified, not assumed**: a CTest suite spins up real listening
+sockets on loopback and tests against them, ASan/UBSan runs in CI on both macOS
+and Linux, and there are no dependencies to pin or shell out to.
+
+```bash
+zapscan -p 1-1024 -c 256 scanme.nmap.org   # sweep the default range fast
+zapscan 10.0.0.0/24                        # subnet via CIDR
+zapscan -j -o report.json -p 22,80,443 db.prod.corp
+```
+
 ---
 
 ## Technical Stack
