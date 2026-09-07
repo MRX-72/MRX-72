@@ -2,13 +2,12 @@
 
 Adversarial testing, low-level optimization, automation, and quantitative research.
 
-[![GitHub Followers](https://img.shields.io/github/followers/MRX-72)](https://github.com/MRX-72) [![Public Repos](https://img.shields.io/github/repos/MRX-72)](https://github.com/MRX-72?tab=repositories) [![Total Forks](https://img.shields.io/github/forks/MRX-72)](https://github.com/MRX-72)
+[![GitHub Followers](https://img.shields.io/github/followers/MRX-72)](https://github.com/MRX-72) [![Public Repos](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FMRX-72&query=%24.public_repos&label=Public%20Repos&color=blue)](https://github.com/MRX-72?tab=repositories)
 
 <p align="center">
   <a href="https://github.com/MRX-72">
     <img height="170" src="https://github-readme-stats-one-bice.vercel.app/api?username=MRX-72&show_icons=true&include_all_commits=true&theme=react&hide_border=true&hide=stars,prs" />
   </a>
-  <img height="170" src="https://github-readme-stats-one-bice.vercel.app/api/top-langs/?username=MRX-72&layout=compact&theme=react&hide_border=true" />
 </p>
 
 ---
