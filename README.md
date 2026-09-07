@@ -1,4 +1,4 @@
-<h1 align="center">AI Red Teamer &nbsp;·&nbsp; Systems Engineer</h1>
+<h1 align="center">LLM Security &nbsp;·&nbsp; Systems Programming</h1>
 
 <p align="center">
   <em>Adversarial testing, low-level optimization, and quantitative research.</em>
