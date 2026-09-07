@@ -33,9 +33,11 @@ lrtf diff base.json current.json    # did the fix work?
 ## Technical Stack
 
 * **Languages:** C++, Go, Python, x86_64 Assembly
-* **Focus:** AI Red Teaming, Offensive Security, Vulnerability Analysis
-* **LLM Systems & Compute:** Inference optimization (vLLM, llama.cpp), custom CUDA kernels, custom RAG architectures
-* **Systems & Automation:** Linux internals, low-level networking, socket programming, n8n orchestration
+* **Focus:** AI Red Teaming, LLM Security, Offensive Security, Vulnerability Analysis
+* **LLM Red Teaming:** prompt injection, jailbreak & encoding-bypass vectors, system-prompt extraction, OWASP LLM Top 10 mapping, canary-based deterministic detection, multi-turn attack chains
+* **Agentic AI Security:** memory-poisoning surfaces (LangChain / ChromaDB / Mem0), RAG & retrieval security, tool-use and excessive-agency attacks
+* **Offensive Security:** vulnerability analysis, recon and port scanning, low-level networking
+* **Systems & Automation:** Linux internals, socket programming, n8n orchestration
 
 ---
 
@@ -51,7 +53,7 @@ lrtf diff base.json current.json    # did the fix work?
 ## Current Work
 
 * **AI Red Teaming** — building tooling against the OWASP LLM Top 10, with an emphasis on detection that is deterministic rather than model-judged
-* **Inference Engineering** — minimizing latency and preserving output quality in local LLMs via custom CUDA kernels and C++ inference engines
+* **Agentic AI Security** — mapping memory-poisoning and agent-manipulation surfaces, and building runtime defense against them
 * **Systems Programming** — low-level Linux utilities and automated infrastructure workflows in Go, C++, and n8n
 
 ---
