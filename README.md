@@ -17,33 +17,47 @@
 
 ---
 
-## What I found
+## Research
 
-I built an adversarial test harness and pointed it at four production LLMs —
-**300 vectors, 10 OWASP categories, one canary-based deterministic detector.**
+**Cross-model adversarial evaluation of four production LLMs.** Ten OWASP LLM Top 10
+categories, measured with canary-based deterministic detection — a random token is
+planted in the system prompt at scan time, so every finding is a reproducible string
+match rather than a second model's opinion.
 
-| | |
-|---|---|
-| **51 vectors** of jailbreaks, encoding bypass, poisoned RAG and prompt extraction | got through **0 times**, on any model |
-| **All 35 failures** | were in tool use, output handling, PII and confabulation |
-| **1 vector** — credential passthrough in a reformatting task | failed on **every model tested** |
+<table>
+<tr><td width="42%"><b>51 vectors</b><br/><sub>jailbreaks · encoding bypass · poisoned RAG · prompt extraction</sub></td>
+<td><b>0 bypasses</b><br/><sub>across all four models</sub></td></tr>
+<tr><td><b>35 failures</b><br/><sub>every one recorded</sub></td>
+<td><b>tool use, output handling, PII, confabulation</b><br/><sub>none in the categories above</sub></td></tr>
+<tr><td><b>1 vector</b><br/><sub>credential passthrough in a reformatting task</sub></td>
+<td><b>failed on every model tested</b><br/><sub>a default behaviour, not a vendor weakness</sub></td></tr>
+</table>
 
-The attacks people write about are the ones these models are trained hardest to
-refuse — and they do refuse them. The holes are *downstream of the refusal*: what
-the model emits, what it does, and what it repeats back.
+**The conclusion.** The attacks that get written about are the ones these models are
+trained hardest to refuse, and they refuse them consistently. The exposure sits
+*downstream of the refusal* — in what the model emits into its output, what actions
+it takes when handed tools, and what it repeats back.
 
-One model went from a clean pass to the worst score of the four, without
-changing — the suite grew to cover tool use, and that is where it broke.
+Supporting evidence: one model scored a clean pass on an earlier revision of the
+suite and the **worst result of the four** on the current one. The model did not
+change. The suite grew to cover tool use, and that is where it broke — a clean scan
+establishes that those vectors did not get through, never that a model is safe.
+
+<sub>Evaluation covers 107 vectors per model, run to completion with zero errors. The
+suite now holds 300; the additional vectors are not yet measured. Raw reports,
+per-finding transcripts and reproduction steps are published in full.</sub>
 
 <p align="center">
-  <a href="https://github.com/MRX-72/llm-red-team-cli#field-results"><b>Full results, raw reports and reproduction steps →</b></a>
+  <a href="https://github.com/MRX-72/llm-red-team-cli#field-results"><b>Read the full evaluation →</b></a>
 </p>
 
 ---
 
 ## Projects
 
-### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli) &nbsp;<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
+
+<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/300%20vectors-8957e5?style=flat-square" alt="300 vectors" /> <img src="https://img.shields.io/badge/114%20tests-2ea043?style=flat-square&logo=pytest&logoColor=white" alt="114 tests" /> <img src="https://img.shields.io/badge/multi----provider-0b7285?style=flat-square" alt="multi--provider" /> <img src="https://img.shields.io/badge/multi----turn-0b7285?style=flat-square" alt="multi--turn" />
 
 > *Find where an LLM's guardrails crack — deterministically, not by judge-model opinion.*
 
@@ -59,7 +73,9 @@ lrtf compare gpt-4o claude-sonnet-4-5 ollama/llama3
 lrtf diff base.json current.json     # did your fix actually work?
 ```
 
-### [QFcli](https://github.com/MRX-72/QFcli) &nbsp;<a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+### [QFcli](https://github.com/MRX-72/QFcli)
+
+<a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/QFcli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white" alt="numpy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/walk----forward-8957e5?style=flat-square" alt="walk--forward" /> <img src="https://img.shields.io/badge/Black----Litterman-8957e5?style=flat-square" alt="Black--Litterman" /> <img src="https://img.shields.io/badge/no%20lookahead-2ea043?style=flat-square" alt="no lookahead" />
 
 > *A backtester that tells you when your strategy adds nothing.*
 
@@ -77,7 +93,9 @@ qfcli --backtest AAPL --walk-forward --ensemble rank --grid "fast=10,20;slow=40,
 qfcli --portfolio AAPL MSFT NVDA --bl --view NVDA=0.18 --ff
 ```
 
-### [zapscan](https://github.com/MRX-72/zapscan) &nbsp;<a href="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+### [zapscan](https://github.com/MRX-72/zapscan)
+
+<a href="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/zapscan/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++17" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/zero%20deps-2ea043?style=flat-square" alt="zero deps" /> <img src="https://img.shields.io/badge/ASan%20/%20UBSan-d1242f?style=flat-square" alt="ASan / UBSan" /> <img src="https://img.shields.io/badge/CTest-8957e5?style=flat-square" alt="CTest" /> <img src="https://img.shields.io/badge/JSON%20output-0b7285?style=flat-square" alt="JSON output" />
 
 > *See what's listening on a network. No dependencies, no `nmap` underneath.*
 
