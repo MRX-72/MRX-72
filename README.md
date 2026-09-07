@@ -2,6 +2,8 @@
 
 Adversarial testing, low-level optimization, automation, and quantitative research.
 
+[![GitHub Followers](https://img.shields.io/github/followers/MRX-72)](https://github.com/MRX-72) [![Public Repos](https://img.shields.io/github/repos/MRX-72)](https://github.com/MRX-72?tab=repositories) [![Total Stars](https://img.shields.io/github/stars/MRX-72)](https://github.com/MRX-72) [![Total Forks](https://img.shields.io/github/forks/MRX-72)](https://github.com/MRX-72)
+
 ---
 
 ## Featured
