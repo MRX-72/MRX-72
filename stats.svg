@@ -1,0 +1,10 @@
+<svg width="500" height="195" viewBox="0 0 500 195" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .t { font: 600 18px 'Segoe UI',Ubuntu,sans-serif; fill: #61dafb }
+  .k { font: 600 14px 'Segoe UI',Ubuntu,sans-serif; fill: #ffffff }
+  .v { font: 700 14px 'Segoe UI',Ubuntu,sans-serif; fill: #61dafb }
+</style>
+<rect width="499" height="194" x="0.5" y="0.5" rx="6" fill="#20232a" stroke="#20232a"/>
+<text x="25" y="35" class="t">MRX-72's GitHub Stats</text>
+<g transform="translate(25,70)"><g transform="translate(0,0)"><text x="0" y="0" class="k">Total Commits:</text><text x="250" y="0" class="v">138</text></g><g transform="translate(0,26)"><text x="0" y="0" class="k">Commits in 2026:</text><text x="250" y="0" class="v">66</text></g><g transform="translate(0,52)"><text x="0" y="0" class="k">Lines Added:</text><text x="250" y="0" class="v">53.9k</text></g><g transform="translate(0,78)"><text x="0" y="0" class="k">Public Repos:</text><text x="250" y="0" class="v">19</text></g><g transform="translate(0,104)"><text x="0" y="0" class="k">Followers:</text><text x="250" y="0" class="v">13</text></g></g>
+</svg>

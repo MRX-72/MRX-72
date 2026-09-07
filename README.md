@@ -6,10 +6,7 @@ Adversarial testing, low-level optimization, automation, and quantitative resear
 
 <p align="center">
   <a href="https://github.com/MRX-72">
-    <img height="170" src="https://github-readme-stats-one-bice.vercel.app/api?username=MRX-72&show_icons=true&include_all_commits=true&theme=react&hide_border=true&hide=stars,prs,issues,contribs&custom_title=MRX%27s%20GitHub%20Stats%20%E2%80%94%20all%20time" />
-  </a>
-  <a href="https://github.com/MRX-72">
-    <img height="170" src="https://github-readme-stats-one-bice.vercel.app/api?username=MRX-72&show_icons=true&theme=react&hide_border=true&hide=stars,prs,issues,contribs&custom_title=MRX%27s%20GitHub%20Stats%20%E2%80%94%202026" />
+    <img src="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats.svg" alt="MRX-72's GitHub Stats" width="500" />
   </a>
 </p>
 
