@@ -22,7 +22,7 @@
 </defs>
 <rect width="499" height="194" x="0.5" y="0.5" rx="6" fill="url(#ground)" stroke="#d1d9e0"/>
 <text x="25" y="35" class="t">MRX-72's GitHub Stats</text>
-<g transform="translate(25,70)"><g transform="translate(0,0)"><text x="0" y="0" class="k">Total Commits:</text><text x="250" y="0" class="v">144</text></g><g transform="translate(0,26)"><text x="0" y="0" class="k">Commits in 2026:</text><text x="250" y="0" class="v">79</text></g><g transform="translate(0,52)"><text x="0" y="0" class="k">Lines Added:</text><text x="250" y="0" class="v">19.8k</text></g><g transform="translate(0,78)"><text x="0" y="0" class="k">Public Repos:</text><text x="250" y="0" class="v">19</text></g><g transform="translate(0,104)"><text x="0" y="0" class="k">Followers:</text><text x="250" y="0" class="v">15</text></g></g>
+<g transform="translate(25,70)"><g transform="translate(0,0)"><text x="0" y="0" class="k">Total Commits:</text><text x="250" y="0" class="v">154</text></g><g transform="translate(0,26)"><text x="0" y="0" class="k">Commits in 2026:</text><text x="250" y="0" class="v">89</text></g><g transform="translate(0,52)"><text x="0" y="0" class="k">Lines Added:</text><text x="250" y="0" class="v">19.8k</text></g><g transform="translate(0,78)"><text x="0" y="0" class="k">Public Repos:</text><text x="250" y="0" class="v">19</text></g><g transform="translate(0,104)"><text x="0" y="0" class="k">Followers:</text><text x="250" y="0" class="v">15</text></g></g>
 <circle cx="405" cy="100" r="40" class="track"/>
 <circle cx="405" cy="100" r="40" class="prog">
   <animate attributeName="stroke-dasharray" from="0 251.3"
