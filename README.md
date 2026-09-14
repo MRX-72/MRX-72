@@ -210,7 +210,7 @@ bootstrap and Jobson-Korkie significance tests.
 - **Shipped** — [LRTF](https://github.com/MRX-72/llm-red-team-cli): an LLM red-team CLI. 330 vectors mapped to the OWASP LLM Top 10, deterministic canary detection, multi-turn attack chains, multi-provider through LiteLLM.
 - **Building** — AMPAF, an agentic memory-poisoning framework. Four payload classes (identity shift, behavior drift, data exfiltration, bias injection) against LangChain, ChromaDB, and Mem0, with an integrity checker, anomaly detector, and live memory-state monitor.
 - **Direction** — a full-lifecycle AI security toolchain: pre-deployment testing, runtime defense, incident forensics.
-- **Maintainer** — invited to [OWASP/cve-lite-cli](https://github.com/OWASP/cve-lite-cli).
+- **Maintainer** — [OWASP](https://owasp.org).
 
 ---
 
