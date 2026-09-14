@@ -25,25 +25,41 @@
 
 ## Research
 
-**Cross-model adversarial evaluation of four production LLMs.** 107 vectors per
-model across the ten OWASP LLM Top 10 categories, canary-based deterministic
-detection, every run completed with zero errors.
-`gemini-3.1-flash-lite`, `gpt-oss-20b`, `gpt-oss-120b` and `qwen3.8-27b` were
-bypassed on 15, 10, 5 and 5 vectors respectively.
+### Where do production LLM guardrails actually fail?
 
-The 51 vectors covering **jailbreaks, encoding bypass, indirect injection and
-system-prompt extraction produced zero bypasses on any model.** All 35 observed
-failures fell in tool use, output handling, PII disclosure and confabulation —
-including one vector that failed on all four, where reformatting a config file as
-JSON reproduced its credentials verbatim.
+**Setup.** Four production models were each run through the same 107 attack
+vectors covering all ten OWASP LLM Top 10 categories. Same system prompt, temperature 0,
+zero errors across every run. Detection was deterministic: a random secret
+("canary") was planted in the system prompt, and a vector counted as a bypass only
+if the model's output contained it (or a fixed leak pattern). No LLM judge.
 
-> These models refuse the attacks they are trained hardest to refuse. The
-> exposure is **downstream of the refusal** — in what they emit, what they do
-> with tools, and what they repeat back.
+| Model | Bypassed |
+|---|---|
+| `gemini-3.1-flash-lite` | 15 / 107 |
+| `gpt-oss-20b` | 10 / 107 |
+| `gpt-oss-120b` | 5 / 107 |
+| `qwen3.8-27b` | 5 / 107 |
 
-<sub>Single pass at temperature 0, an observation not a rate · synthetic harness
-prompt · suite now holds 300 vectors, additions unmeasured · raw reports and
-per-finding transcripts published in full</sub>
+**Finding.** The attacks everyone writes about **failed completely.** 51 vectors
+covering jailbreaks, encoding bypass (base64, ROT13, homoglyphs), indirect injection
+and system-prompt extraction got **0 bypasses on all four models**.
+
+34 of the 35 failures landed in the *agentic and output* layer instead:
+
+- **Tool misuse:** calling `transfer_funds` with no confirmation, running a `send_email` call that was hidden inside a pasted ticket, using an admin token when a normal tool would have worked
+- **Output handling:** filling a secret into a markdown image URL, which leaks it with zero clicks as soon as the chat renders
+- **PII disclosure:** asked to reformat a config file as JSON, **all four models** returned the API keys unredacted
+- **Confabulation:** inventing a pip package name, which opens the door to slopsquatting
+- **Unbounded consumption:** getting pushed into runaway repetitive output
+
+> **Takeaway:** refusal training works on the prompts it was trained on. The risk
+> sits **after** the model decides to help: in what it writes, which tools it calls,
+> and what data it repeats back. The same model that refuses a poisoned document
+> telling it to *say* something will obey one telling it to *do* something.
+
+<sub>One run per model at temperature 0, so these are observations and not rates ·
+synthetic system prompt · the suite has since grown to 330 vectors, and the new ones
+have not been run yet · every raw report and per-finding transcript is public</sub>
 
 <p align="center">
   <a href="https://github.com/MRX-72/llm-red-team-cli#field-results"><b>Full evaluation →</b></a>
@@ -57,14 +73,20 @@ per-finding transcripts published in full</sub>
 
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
-<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/300%20vectors-8957e5?style=flat-square" alt="300 vectors" /> <img src="https://img.shields.io/badge/114%20tests-2ea043?style=flat-square&logo=pytest&logoColor=white" alt="114 tests" /> <img src="https://img.shields.io/badge/multi--provider-0b7285?style=flat-square" alt="multi-provider" /> <img src="https://img.shields.io/badge/multi--turn-0b7285?style=flat-square" alt="multi-turn" />
+<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/330%20vectors-8957e5?style=flat-square" alt="330 vectors" /> <img src="https://img.shields.io/badge/240%2B%20tests-2ea043?style=flat-square&logo=pytest&logoColor=white" alt="240+ tests" /> <img src="https://img.shields.io/badge/multi--provider-0b7285?style=flat-square" alt="multi-provider" /> <img src="https://img.shields.io/badge/multi--turn-0b7285?style=flat-square" alt="multi-turn" />
 
-> *Find where an LLM's guardrails crack — deterministically, not by judge-model opinion.*
+**A CLI that red-teams LLM applications against the OWASP LLM Top 10 and reports exactly which attacks got through.**
 
-A fresh random **canary** is planted in the system prompt at scan time, so a
-finding is a string match: reproducible, one API call per vector, no second model
-grading the first. 12 vectors run as real **multi-turn conversations**, because a
-guardrail that holds against one message often erodes across five.
+**How it works:** each scan generates a random canary token and plants it in the
+system prompt with an instruction never to reveal it. Then 330 attack vectors
+(prompt injection, jailbreaks, encoding tricks, RAG poisoning, tool abuse, PII
+leaks and more) all try to extract it. A finding is just a string match, so it is
+reproducible, costs one API call per vector, and needs no second LLM to judge the
+result. For risks a canary can't capture, dedicated detectors take over: `regex`
+for SSNs and key formats, `repetition` for unbounded output, `absent` for missing
+hedges. 15 vectors are **multi-turn** crescendo attacks, since guardrails that hold
+for one message often give way over five. Works with any provider through LiteLLM
+(OpenAI, Anthropic, Gemini, Groq, Ollama), and `diff` lets you check for regressions in CI.
 
 ```bash
 lrtf scan gpt-4o --tui               # live view as each vector lands
@@ -77,16 +99,19 @@ lrtf diff base.json current.json     # did your fix actually work?
 
 <a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/QFcli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white" alt="numpy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/walk--forward-8957e5?style=flat-square" alt="walk-forward" /> <img src="https://img.shields.io/badge/Black--Litterman-8957e5?style=flat-square" alt="Black-Litterman" /> <img src="https://img.shields.io/badge/no%20lookahead-2ea043?style=flat-square" alt="no lookahead" />
 
-> *A backtester that tells you when your strategy adds nothing.*
+**A quantitative research CLI for backtesting trading strategies and building portfolios, designed to show you when a result is overfit or statistically meaningless.**
 
-Signals shift one bar — **no lookahead**. Cost and slippage are charged against
-turnover. Every run reports alpha and information ratio **against buy-and-hold**,
-so a strategy with no edge says so out loud.
-
-Walk-forward validation, ensemble blending, target-vol and fractional-Kelly
-sizing, **Black-Litterman** allocation over shrinkage and PCA-factor covariance,
-Fama-French overlay, bootstrap and Jobson-Korkie significance tests. Pure
-numpy/pandas.
+**How it works:** it pulls OHLCV data from Yahoo Finance and runs strategies such as
+SMA cross, momentum and RSI reversion (or your own). Signals are shifted one bar
+to rule out **lookahead bias**, costs and slippage are charged on turnover, and
+every result is compared with **buy-and-hold** (alpha, information ratio, hit rate).
+Parameters are chosen with **walk-forward validation**: tune in-sample, evaluate on
+unseen windows, and optionally blend the grid as an ensemble to cut selection
+variance. Positions can be sized by target volatility or fractional Kelly. For
+allocation it offers min-variance, tangency and **Black-Litterman** portfolios
+over Ledoit-Wolf shrinkage or PCA-factor covariance, plus a Fama-French factor
+overlay. Bootstrap and Jobson-Korkie tests show whether a Sharpe ratio is real.
+Built on numpy and pandas only.
 
 ```bash
 qfcli --backtest AAPL --walk-forward --ensemble rank --grid "fast=10,20;slow=40,60"
@@ -97,15 +122,17 @@ qfcli --portfolio AAPL MSFT NVDA --bl --view NVDA=0.18 --ff
 
 <a href="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/zapscan/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++17" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/zero%20deps-2ea043?style=flat-square" alt="zero deps" /> <img src="https://img.shields.io/badge/ASan%20/%20UBSan-d1242f?style=flat-square" alt="ASan / UBSan" /> <img src="https://img.shields.io/badge/CTest-8957e5?style=flat-square" alt="CTest" /> <img src="https://img.shields.io/badge/JSON%20output-0b7285?style=flat-square" alt="JSON output" />
 
-> *See what's listening on a network. No dependencies, no `nmap` underneath.*
+**A fast, dependency-free TCP port scanner written from scratch in C++17, directly on BSD sockets. It never shells out to `nmap`.**
 
-Native parallel TCP scanner in **C++17**. Non-blocking `connect()` awaited through
-`poll()`, from a bounded worker pool with deterministic concurrency — scan the same
-range twice, get the same behaviour twice. Banner grabs on open ports, JSON output,
-input validated before a single packet is sent.
-
-Verified by a **CTest** suite that spins up real listening sockets, with
-**ASan/UBSan** in CI on macOS and Linux.
+**How it works:** targets (IPs, hostnames, CIDR, ranges) and port specs are fully
+parsed and validated before any socket opens. A fixed pool of worker threads pulls
+`(host, port)` pairs from a shared atomic index, interleaved across hosts so one
+slow host can't stall the rest. Each probe runs a non-blocking `connect()` with a
+`poll()` timeout, and open ports get a banner grabbed on the same connection.
+Results are sorted before output, so reports are stable no matter what order
+probes finish in. Output as text, JSON or CSV (CSV is escaped against formula injection).
+Integration tests bind real loopback listeners with no network mocking, and CI
+runs ASan/UBSan on macOS and Linux.
 
 ```bash
 zapscan -p 1-1024 -c 256 scanme.nmap.org
