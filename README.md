@@ -211,7 +211,7 @@ bootstrap and Jobson-Korkie significance tests.
 - **Building** — AMPAF, an agentic memory-poisoning framework. Four payload classes (identity shift, behavior drift, data exfiltration, bias injection) against LangChain, ChromaDB, and Mem0, with an integrity checker, anomaly detector, and live memory-state monitor.
 - **Direction** — a full-lifecycle AI security toolchain: pre-deployment testing, runtime defense, incident forensics.
 - **Collaborator** — [OWASP](https://owasp.org).
-- **Dev** — [Omnikon](https://www.omnikonhub.com/).
+- **Core dev** — [Omnikon](https://www.omnikonhub.com/).
 
 ---
 
