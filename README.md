@@ -179,26 +179,38 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Focus Areas
 
-**LLM security** &nbsp;prompt injection · jailbreak and encoding-bypass vectors ·
-system-prompt extraction · multi-turn attack chains · canary-based deterministic
-detection · OWASP LLM Top 10
+**LLM security** &nbsp; Adversarial evaluation across the OWASP LLM Top 10 —
+prompt injection, jailbreaks, encoding bypass, indirect/RAG injection,
+system-prompt extraction, and multi-turn crescendo chains — built on
+**canary-based deterministic detection**: a planted secret turns every finding
+into a reproducible string match, with no second model grading the first.
 
-**Agentic AI** &nbsp;memory poisoning (LangChain / ChromaDB / Mem0) · RAG and
-retrieval security · tool-use and excessive-agency attacks
+**Agentic AI security** &nbsp; The attack surface that opens once a model has
+memory and tools — persistent-memory poisoning across LangChain / ChromaDB /
+Mem0 (identity shift, behavior drift, data exfiltration, bias injection),
+tool-use and excessive-agency abuse — and the integrity hashing and embedding
+anomaly detection that catch it.
 
-**Offensive security** &nbsp;network recon and port scanning · dependency
-vulnerability analysis and CVE identification · low-level socket programming
+**Systems &amp; offensive security** &nbsp; Network tooling from the syscall up —
+non-blocking TCP scanning over POSIX sockets with a bounded worker pool, banner
+grabbing, x86_64 assembly — alongside email forensics (SMTP relay-path
+reconstruction, SPF/DKIM/DMARC, punycode detection, offline GeoIP) and
+dependency CVE analysis via OSV.
 
-**Quant** &nbsp;no-lookahead backtesting · walk-forward validation ·
-Black-Litterman · shrinkage and PCA-factor covariance · vol-managed sizing
+**Quantitative finance** &nbsp; Backtesting engineered against self-deception —
+one-bar-lagged signals (no lookahead), turnover-charged costs, every result
+benchmarked to buy-and-hold — with walk-forward validation, Black-Litterman
+allocation over Ledoit-Wolf / PCA-factor covariance, and bootstrap /
+Jobson-Korkie significance tests.
 
 ---
 
 ## Now
 
-- **AI red teaming** — tooling against the OWASP LLM Top 10, with detection that is deterministic rather than model-judged
-- **Agentic AI security** — mapping memory-poisoning and agent-manipulation surfaces, and building runtime defense against them
-- **Invited maintainer** — [OWASP/cve-lite-cli](https://github.com/OWASP/cve-lite-cli)
+- **Shipped —** [**LRTF**](https://github.com/MRX-72/llm-red-team-cli) — LLM red-team CLI, 330 vectors mapped to the OWASP LLM Top 10, deterministic canary detection, multi-turn attack chains, multi-provider through LiteLLM
+- **Building — AMPAF** — an agentic memory-poisoning framework: four payload classes (identity shift, behavior drift, data exfiltration, bias injection) against LangChain / ChromaDB / Mem0, paired with an integrity checker, anomaly detector, and live memory-state monitor
+- **Direction —** a full-lifecycle AI security toolchain: pre-deployment testing → runtime defense → incident forensics
+- **Invited maintainer —** [OWASP/cve-lite-cli](https://github.com/OWASP/cve-lite-cli)
 
 ---
 
