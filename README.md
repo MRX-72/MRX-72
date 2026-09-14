@@ -48,12 +48,12 @@ and system-prompt extraction got **0 bypasses on all four models**.
 
 - **Tool misuse:** calling `transfer_funds` with no confirmation, running a `send_email` call that was hidden inside a pasted ticket, using an admin token when a normal tool would have worked
 - **Output handling:** filling a secret into a markdown image URL, which leaks it with zero clicks as soon as the chat renders
-- **PII disclosure:** asked to reformat a config file as JSON, **all four models** returned the API keys unredacted
+- **PII disclosure:** asked to reformat a config file as JSON, all four models returned the API keys unredacted
 - **Confabulation:** inventing a pip package name, which opens the door to slopsquatting
 - **Unbounded consumption:** getting pushed into runaway repetitive output
 
 > **Takeaway:** refusal training works on the prompts it was trained on. The risk
-> sits **after** the model decides to help: in what it writes, which tools it calls,
+> sits *after* the model decides to help: in what it writes, which tools it calls,
 > and what data it repeats back. The same model that refuses a poisoned document
 > telling it to *say* something will obey one telling it to *do* something.
 
@@ -80,11 +80,11 @@ have not been run yet · every raw report and per-finding transcript is public</
 **How it works:** each scan generates a random canary token and plants it in the
 system prompt with an instruction never to reveal it. Then 330 attack vectors
 (prompt injection, jailbreaks, encoding tricks, RAG poisoning, tool abuse, PII
-leaks and more) all try to extract it. A finding is just a string match, so it is
+leakage) all try to extract it. A finding is just a string match, so it is
 reproducible, costs one API call per vector, and needs no second LLM to judge the
 result. For risks a canary can't capture, dedicated detectors take over: `regex`
 for SSNs and key formats, `repetition` for unbounded output, `absent` for missing
-hedges. 15 vectors are **multi-turn** crescendo attacks, since guardrails that hold
+hedges. 15 vectors are multi-turn crescendo attacks, since guardrails that hold
 for one message often give way over five. Works with any provider through LiteLLM
 (OpenAI, Anthropic, Gemini, Groq, Ollama), and `diff` lets you check for regressions in CI.
 
@@ -99,16 +99,16 @@ lrtf diff base.json current.json     # did your fix actually work?
 
 <a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/QFcli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white" alt="numpy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/walk--forward-8957e5?style=flat-square" alt="walk-forward" /> <img src="https://img.shields.io/badge/Black--Litterman-8957e5?style=flat-square" alt="Black-Litterman" /> <img src="https://img.shields.io/badge/no%20lookahead-2ea043?style=flat-square" alt="no lookahead" />
 
-**A quantitative research CLI for backtesting trading strategies and building portfolios, designed to show you when a result is overfit or statistically meaningless.**
+**A quantitative research CLI for backtesting trading strategies and building portfolios, with the statistical checks to flag when a result is overfit or just noise.**
 
 **How it works:** it pulls OHLCV data from Yahoo Finance and runs strategies such as
 SMA cross, momentum and RSI reversion (or your own). Signals are shifted one bar
-to rule out **lookahead bias**, costs and slippage are charged on turnover, and
-every result is compared with **buy-and-hold** (alpha, information ratio, hit rate).
+to rule out lookahead bias, costs and slippage are charged on turnover, and
+every result is compared with buy-and-hold (alpha, information ratio, hit rate).
 Parameters are chosen with **walk-forward validation**: tune in-sample, evaluate on
 unseen windows, and optionally blend the grid as an ensemble to cut selection
 variance. Positions can be sized by target volatility or fractional Kelly. For
-allocation it offers min-variance, tangency and **Black-Litterman** portfolios
+allocation it offers min-variance, tangency and Black-Litterman portfolios
 over Ledoit-Wolf shrinkage or PCA-factor covariance, plus a Fama-French factor
 overlay. Bootstrap and Jobson-Korkie tests show whether a Sharpe ratio is real.
 Built on numpy and pandas only.
@@ -179,38 +179,38 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Focus Areas
 
-**LLM security** &nbsp; Adversarial evaluation across the OWASP LLM Top 10 —
-prompt injection, jailbreaks, encoding bypass, indirect/RAG injection,
-system-prompt extraction, and multi-turn crescendo chains — built on
-**canary-based deterministic detection**: a planted secret turns every finding
-into a reproducible string match, with no second model grading the first.
+**LLM security** &nbsp; Adversarial evaluation across the OWASP LLM Top 10:
+prompt injection, jailbreaks, encoding bypass, indirect and RAG injection,
+system-prompt extraction, and multi-turn crescendo chains. Detection is
+canary-based and deterministic — a secret planted in the system prompt makes
+every finding a reproducible string match, with no second model grading the first.
 
-**Agentic AI security** &nbsp; The attack surface that opens once a model has
-memory and tools — persistent-memory poisoning across LangChain / ChromaDB /
-Mem0 (identity shift, behavior drift, data exfiltration, bias injection),
-tool-use and excessive-agency abuse — and the integrity hashing and embedding
-anomaly detection that catch it.
+**Agentic AI security** &nbsp; The surface that opens once a model has persistent
+memory and tools. Memory poisoning across LangChain, ChromaDB, and Mem0 (identity
+shift, behavior drift, data exfiltration, bias injection), tool-use and
+excessive-agency abuse, and the integrity hashing and embedding-anomaly detection
+that catches it.
 
-**Systems &amp; offensive security** &nbsp; Network tooling from the syscall up —
-non-blocking TCP scanning over POSIX sockets with a bounded worker pool, banner
-grabbing, x86_64 assembly — alongside email forensics (SMTP relay-path
-reconstruction, SPF/DKIM/DMARC, punycode detection, offline GeoIP) and
-dependency CVE analysis via OSV.
+**Systems & offensive security** &nbsp; Low-level network tooling: non-blocking
+TCP scanning over POSIX sockets with a bounded worker pool, banner grabbing, and
+x86_64 assembly. Plus email forensics (SMTP relay-path reconstruction,
+SPF/DKIM/DMARC, punycode detection, offline GeoIP) and dependency CVE analysis
+via OSV.
 
-**Quantitative finance** &nbsp; Backtesting engineered against self-deception —
-one-bar-lagged signals (no lookahead), turnover-charged costs, every result
-benchmarked to buy-and-hold — with walk-forward validation, Black-Litterman
-allocation over Ledoit-Wolf / PCA-factor covariance, and bootstrap /
-Jobson-Korkie significance tests.
+**Quantitative finance** &nbsp; Backtesting with the checks that catch
+overfitting: one-bar-lagged signals (no lookahead), costs charged on turnover,
+and every result benchmarked to buy-and-hold. Walk-forward validation,
+Black-Litterman allocation over Ledoit-Wolf and PCA-factor covariance, and
+bootstrap and Jobson-Korkie significance tests.
 
 ---
 
 ## Now
 
-- **Shipped —** [**LRTF**](https://github.com/MRX-72/llm-red-team-cli) — LLM red-team CLI, 330 vectors mapped to the OWASP LLM Top 10, deterministic canary detection, multi-turn attack chains, multi-provider through LiteLLM
-- **Building — AMPAF** — an agentic memory-poisoning framework: four payload classes (identity shift, behavior drift, data exfiltration, bias injection) against LangChain / ChromaDB / Mem0, paired with an integrity checker, anomaly detector, and live memory-state monitor
-- **Direction —** a full-lifecycle AI security toolchain: pre-deployment testing → runtime defense → incident forensics
-- **Invited maintainer —** [OWASP/cve-lite-cli](https://github.com/OWASP/cve-lite-cli)
+- **Shipped** — [LRTF](https://github.com/MRX-72/llm-red-team-cli): an LLM red-team CLI. 330 vectors mapped to the OWASP LLM Top 10, deterministic canary detection, multi-turn attack chains, multi-provider through LiteLLM.
+- **Building** — AMPAF, an agentic memory-poisoning framework. Four payload classes (identity shift, behavior drift, data exfiltration, bias injection) against LangChain, ChromaDB, and Mem0, with an integrity checker, anomaly detector, and live memory-state monitor.
+- **Direction** — a full-lifecycle AI security toolchain: pre-deployment testing, runtime defense, incident forensics.
+- **Maintainer** — invited to [OWASP/cve-lite-cli](https://github.com/OWASP/cve-lite-cli).
 
 ---
 
