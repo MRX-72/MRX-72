@@ -165,7 +165,7 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 **Cryptography**
 
-<img src="https://img.shields.io/badge/bcrypt-3D3D3D?style=for-the-badge" alt="bcrypt" /> <img src="https://img.shields.io/badge/pyAesCrypt-3D3D3D?style=for-the-badge" alt="pyAesCrypt" /> <img src="https://img.shields.io/badge/pyaes-3D3D3D?style=for-the-badge" alt="pyaes" />
+<img src="https://img.shields.io/badge/AES-006D77?style=for-the-badge" alt="AES" /> <img src="https://img.shields.io/badge/RSA-006D77?style=for-the-badge" alt="RSA" /> <img src="https://img.shields.io/badge/SHA--256-006D77?style=for-the-badge" alt="SHA-256" /> <img src="https://img.shields.io/badge/ECDSA-006D77?style=for-the-badge" alt="ECDSA" /> <img src="https://img.shields.io/badge/Fernet-006D77?style=for-the-badge" alt="Fernet" /> <img src="https://img.shields.io/badge/scrypt-006D77?style=for-the-badge" alt="scrypt" /> <img src="https://img.shields.io/badge/cryptography-3D3D3D?style=for-the-badge&logo=openssl&logoColor=white" alt="cryptography" /> <img src="https://img.shields.io/badge/bcrypt-3D3D3D?style=for-the-badge" alt="bcrypt" /> <img src="https://img.shields.io/badge/pyAesCrypt-3D3D3D?style=for-the-badge" alt="pyAesCrypt" /> <img src="https://img.shields.io/badge/pyaes-3D3D3D?style=for-the-badge" alt="pyaes" />
 
 **Testing**
 
