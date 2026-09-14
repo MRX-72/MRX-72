@@ -141,9 +141,43 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ---
 
-## Stack
+## Tech Stack
 
-**Languages** &nbsp;C++ · Go · Python · x86_64 Assembly
+**Languages**
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/Crystal-000000?style=for-the-badge&logo=crystal&logoColor=white" alt="Crystal" /> <img src="https://img.shields.io/badge/x86__64%20Assembly-6E4C13?style=for-the-badge" alt="x86_64 Assembly" /> <img src="https://img.shields.io/badge/ARM%20Assembly-0091BD?style=for-the-badge&logo=arm&logoColor=white" alt="ARM Assembly" /> <img src="https://img.shields.io/badge/SQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
+
+**AI / ML**
+
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" /> <img src="https://img.shields.io/badge/Hugging%20Face%20Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face Transformers" />
+
+**Backend, Data & Cloud**
+
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" /> <img src="https://img.shields.io/badge/REST%20APIs-6BA539?style=for-the-badge&logo=openapiinitiative&logoColor=white" alt="REST APIs" /> <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" /> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" /> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/yfinance-7B0099?style=for-the-badge" alt="yfinance" />
+
+**CLI, TUI & Systems**
+
+<img src="https://img.shields.io/badge/CLI-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="CLI" /> <img src="https://img.shields.io/badge/TUI-241F31?style=for-the-badge&logo=gnometerminal&logoColor=white" alt="TUI" /> <img src="https://img.shields.io/badge/POSIX%20Sockets-555555?style=for-the-badge" alt="POSIX Sockets" />
+
+**Security**
+
+<img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/Penetration%20Testing-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Penetration Testing" /> <img src="https://img.shields.io/badge/OSINT-2F3E46?style=for-the-badge" alt="OSINT" /> <img src="https://img.shields.io/badge/Networking%20%26%20Network%20Security-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Networking & Network Security" /> <img src="https://img.shields.io/badge/Fuzzing-B22222?style=for-the-badge" alt="Fuzzing" />
+
+**Cryptography**
+
+<img src="https://img.shields.io/badge/bcrypt-3D3D3D?style=for-the-badge" alt="bcrypt" /> <img src="https://img.shields.io/badge/pyAesCrypt-3D3D3D?style=for-the-badge" alt="pyAesCrypt" /> <img src="https://img.shields.io/badge/pyaes-3D3D3D?style=for-the-badge" alt="pyaes" />
+
+**Testing**
+
+<img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="pytest" /> <img src="https://img.shields.io/badge/CTest-064F8C?style=for-the-badge&logo=cmake&logoColor=white" alt="CTest" /> <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge" alt="Playwright" />
+
+**Tools & Platforms**
+
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /> <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS" /> <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+
+---
+
+## Focus Areas
 
 **LLM security** &nbsp;prompt injection · jailbreak and encoding-bypass vectors ·
 system-prompt extraction · multi-turn attack chains · canary-based deterministic
