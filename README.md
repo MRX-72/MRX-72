@@ -14,32 +14,18 @@
   </a>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/x86__64%20Assembly-6E4C13?style=for-the-badge" alt="x86_64 Assembly" />
-  <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />
-</p>
-
 ---
 
 ## Recent Contributions
 
-<p align="center">
-  <a href="https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged"><img src="https://img.shields.io/badge/hashcat-2%20merged-2ea043?style=for-the-badge" alt="hashcat - 2 merged" /></a>
-  <a href="https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9"><img src="https://img.shields.io/badge/nmap-shipped%20%26%20credited-2ea043?style=for-the-badge" alt="nmap - shipped and credited" /></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/OWASP/AISVS/pull/1153"><img src="https://img.shields.io/badge/OWASP%20AISVS-merged-2ea043?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP AISVS - merged" /></a>
-  <a href="https://github.com/OWASP/DockSec/pull/169"><img src="https://img.shields.io/badge/OWASP%20DockSec-merged-2ea043?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP DockSec - merged" /></a>
-  <a href="https://github.com/OWASP/cve-lite-cli/pull/720"><img src="https://img.shields.io/badge/OWASP%20cve--lite--cli-merged-2ea043?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP cve-lite-cli - merged" /></a>
-  <a href="https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81"><img src="https://img.shields.io/badge/GenAI%20Red%20Team%20Lab-merged-2ea043?style=for-the-badge" alt="GenAI Red Team Lab - merged" /></a>
-</p>
-
-<p align="center">
-  <sub>Every badge links to the merged work · nmap's links to the changelog entry crediting the fix</sub>
-</p>
+| Project | Contribution | |
+| :-- | :-- | :-- |
+| **[hashcat](https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | zlib symbol loading on macOS; leaks in config teardown | 2 merged |
+| **[nmap](https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9)** | Ncat no longer signals its own process group | shipped, credited |
+| **[OWASP AISVS](https://github.com/OWASP/AISVS/pull/1153)** | missing controls in the Appendix B inventory | merged |
+| **[OWASP DockSec](https://github.com/OWASP/DockSec/pull/169)** | passwords leaking from connection-string URLs | merged |
+| **[OWASP cve-lite-cli](https://github.com/OWASP/cve-lite-cli/pull/720)** | dependency scanner comparison analysis | merged |
+| **[GenAI Red Team Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81)** | memory-poisoning exploit module | merged |
 
 ---
 
@@ -93,7 +79,7 @@ have not been run yet · every raw report and per-finding transcript is public</
 
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
-<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/330%20vectors-8957e5?style=flat-square" alt="330 vectors" /> <img src="https://img.shields.io/badge/240%2B%20tests-2ea043?style=flat-square&logo=pytest&logoColor=white" alt="240+ tests" /> <img src="https://img.shields.io/badge/multi--provider-0b7285?style=flat-square" alt="multi-provider" /> <img src="https://img.shields.io/badge/multi--turn-0b7285?style=flat-square" alt="multi-turn" />
+<sub>Python 3.9+ · MIT · 330 vectors · 240+ tests · multi-provider · multi-turn</sub>
 
 **A CLI that red-teams LLM applications against the OWASP LLM Top 10 and reports exactly which attacks got through.**
 
@@ -117,7 +103,7 @@ lrtf diff base.json current.json     # did your fix actually work?
 
 ### [QFcli](https://github.com/MRX-72/QFcli)
 
-<a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/QFcli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white" alt="numpy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/walk--forward-8957e5?style=flat-square" alt="walk-forward" /> <img src="https://img.shields.io/badge/Black--Litterman-8957e5?style=flat-square" alt="Black-Litterman" /> <img src="https://img.shields.io/badge/no%20lookahead-2ea043?style=flat-square" alt="no lookahead" />
+<sub>Python 3.9+ · MIT · NumPy/pandas · walk-forward validation · Black-Litterman · no lookahead</sub>
 
 **A quantitative research CLI for backtesting trading strategies and building portfolios, with the statistical checks to flag when a result is overfit or just noise.**
 
@@ -140,7 +126,7 @@ qfcli --portfolio AAPL MSFT NVDA --bl --view NVDA=0.18 --ff
 
 ### [zapscan](https://github.com/MRX-72/zapscan)
 
-<a href="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/zapscan/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++17" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/zero%20deps-2ea043?style=flat-square" alt="zero deps" /> <img src="https://img.shields.io/badge/ASan%20/%20UBSan-d1242f?style=flat-square" alt="ASan / UBSan" /> <img src="https://img.shields.io/badge/CTest-8957e5?style=flat-square" alt="CTest" /> <img src="https://img.shields.io/badge/JSON%20output-0b7285?style=flat-square" alt="JSON output" />
+<sub>C++17 · MIT · zero dependencies · ASan/UBSan in CI · CTest · text, JSON, CSV output</sub>
 
 **A fast, dependency-free TCP port scanner written from scratch in C++17, directly on BSD sockets. It never shells out to `nmap`.**
 
@@ -163,37 +149,19 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Tech Stack
 
-**Languages**
+**Languages** &nbsp;&nbsp; Python · C++ · Go · Crystal · x86_64 and ARM assembly · SQL
 
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/Crystal-000000?style=for-the-badge&logo=crystal&logoColor=white" alt="Crystal" /> <img src="https://img.shields.io/badge/x86__64%20Assembly-6E4C13?style=for-the-badge" alt="x86_64 Assembly" /> <img src="https://img.shields.io/badge/ARM%20Assembly-0091BD?style=for-the-badge&logo=arm&logoColor=white" alt="ARM Assembly" /> <img src="https://img.shields.io/badge/SQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
+**AI / ML** &nbsp;&nbsp; PyTorch · HF Transformers · LangChain · ChromaDB · Mem0 · LiteLLM · vLLM · Ollama · OpenAI · Groq
 
-**AI / ML**
+**Backend, data & cloud** &nbsp;&nbsp; FastAPI · REST · Supabase · Vercel · Docker · NumPy · pandas · yfinance
 
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" /> <img src="https://img.shields.io/badge/HF%20Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="HF Transformers" /> <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain" /> <img src="https://img.shields.io/badge/ChromaDB-5A67D8?style=for-the-badge" alt="ChromaDB" /> <img src="https://img.shields.io/badge/Mem0-6E56CF?style=for-the-badge" alt="Mem0" /> <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge" alt="OpenAI" /> <img src="https://img.shields.io/badge/LiteLLM-1A7F64?style=for-the-badge" alt="LiteLLM" /> <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama" /> <img src="https://img.shields.io/badge/Groq-F55036?style=for-the-badge" alt="Groq" /> <img src="https://img.shields.io/badge/vLLM-2563EB?style=for-the-badge&logo=vllm&logoColor=white" alt="vLLM" /> <img src="https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code" /> <img src="https://img.shields.io/badge/OpenCode-000000?style=for-the-badge&logo=opencode&logoColor=white" alt="OpenCode" />
+**CLI, TUI & systems** &nbsp;&nbsp; POSIX sockets · terminal UIs · PowerShell
 
-**Backend, Data & Cloud**
+**Security** &nbsp;&nbsp; OWASP LLM Top 10 · OWASP Top 10 · AI red teaming · agentic and RAG security · web app pentesting · network security · OSINT
 
-<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" /> <img src="https://img.shields.io/badge/REST%20APIs-6BA539?style=for-the-badge&logo=openapiinitiative&logoColor=white" alt="REST APIs" /> <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" /> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" /> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/yfinance-7B0099?style=for-the-badge" alt="yfinance" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+**Cryptography** &nbsp;&nbsp; AES · RSA · ECDSA · SHA-256 · scrypt · Fernet
 
-**CLI, TUI & Systems**
-
-<img src="https://img.shields.io/badge/CLI-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="CLI" /> <img src="https://img.shields.io/badge/TUI-241F31?style=for-the-badge&logo=gnometerminal&logoColor=white" alt="TUI" /> <img src="https://img.shields.io/badge/POSIX%20Sockets-555555?style=for-the-badge" alt="POSIX Sockets" /> <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge" alt="PowerShell" /> <img src="https://img.shields.io/badge/Ghostty-22252A?style=for-the-badge&logo=ghostty&logoColor=white" alt="Ghostty" />
-
-**Security**
-
-<img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/OWASP%20Top%2010-000000?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP Top 10" /> <img src="https://img.shields.io/badge/OWASP%20Dependency--Check-000000?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP Dependency-Check" /> <img src="https://img.shields.io/badge/AI%20Red%20Teaming-6E40C9?style=for-the-badge" alt="AI Red Teaming" /> <img src="https://img.shields.io/badge/Agentic%20AI%20Security-4338CA?style=for-the-badge" alt="Agentic AI Security" /> <img src="https://img.shields.io/badge/RAG%20Security-7C3AED?style=for-the-badge" alt="RAG Security" /> <img src="https://img.shields.io/badge/Web%20App%20Pentesting-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white" alt="Web App Pentesting" /> <img src="https://img.shields.io/badge/OSINT-2F3E46?style=for-the-badge" alt="OSINT" /> <img src="https://img.shields.io/badge/Networking%20%26%20Network%20Security-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Networking & Network Security" /> 
-
-**Cryptography**
-
-<img src="https://img.shields.io/badge/AES-A31515?style=for-the-badge" alt="AES" /> <img src="https://img.shields.io/badge/RSA-1E5AA8?style=for-the-badge" alt="RSA" /> <img src="https://img.shields.io/badge/SHA--256-0F7B6C?style=for-the-badge" alt="SHA-256" /> <img src="https://img.shields.io/badge/ECDSA-6B3FA0?style=for-the-badge" alt="ECDSA" /> <img src="https://img.shields.io/badge/Fernet-C2410C?style=for-the-badge" alt="Fernet" /> <img src="https://img.shields.io/badge/scrypt-2F7D34?style=for-the-badge" alt="scrypt" />
-
-**Testing**
-
-<img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="pytest" /> <img src="https://img.shields.io/badge/CTest-064F8C?style=for-the-badge&logo=cmake&logoColor=white" alt="CTest" /> <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge" alt="Playwright" />
-
-**Tools & Platforms**
-
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /> <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=for-the-badge&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS" /> <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+**Testing & tooling** &nbsp;&nbsp; pytest · CTest · Playwright · CMake · Git · GitHub Actions · Linux · macOS
 
 ---
 
@@ -236,5 +204,5 @@ bootstrap and Jobson-Korkie significance tests.
 ---
 
 <p align="center">
-  <a href="mailto:theaiguy369@gmail.com"><img src="https://img.shields.io/badge/theaiguy369@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="mailto:theaiguy369@gmail.com">theaiguy369@gmail.com</a>
 </p>
