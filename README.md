@@ -18,6 +18,8 @@
 
 ## Recent Contributions
 
+> Work merged into upstream security tooling.
+
 | Project | Contribution | |
 | :-- | :-- | :-- |
 | **[hashcat](https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | zlib symbol loading on macOS; leaks in config teardown | 2 merged |
@@ -39,12 +41,24 @@ zero errors across every run. Detection was deterministic: a random secret
 ("canary") was planted in the system prompt, and a vector counted as a bypass only
 if the model's output contained it (or a fixed leak pattern). No LLM judge.
 
-| Model | Bypassed |
-|---|---|
-| `gemini-3.1-flash-lite` | 15 / 107 |
-| `gpt-oss-20b` | 10 / 107 |
-| `gpt-oss-120b` | 5 / 107 |
-| `qwen3.8-27b` | 5 / 107 |
+```
+  Vectors bypassed, out of 107
+
+  gemini-3.1-flash-lite  ███████████████  15/107
+  gpt-oss-20b            ██████████·····  10/107
+  gpt-oss-120b           █████··········  5/107
+  qwen3.8-27b            █████··········  5/107
+```
+
+Where the 35 failures landed:
+
+```
+  agentic & output layer   ████████████████████████████████████  34
+  everything else          █                                      1
+
+  jailbreaks · encoding bypass · indirect injection
+  · system-prompt extraction  (51 vectors)              zero bypasses
+```
 
 **Finding.** The attacks everyone writes about **failed completely.** 51 vectors
 covering jailbreaks, encoding bypass (base64, ROT13, homoglyphs), indirect injection
@@ -76,6 +90,8 @@ have not been run yet · every raw report and per-finding transcript is public</
 ---
 
 ## Projects
+
+> Built and maintained solo. All open source.
 
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
@@ -147,38 +163,78 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ---
 
-## Tech Stack
+<h2 id="tech">Tech Stack</h2>
+
+> Languages and tools I reach for most.
 
 <table>
   <tr>
-    <td><b>Languages</b></td>
-    <td><code>Python</code> <code>C++</code> <code>Go</code> <code>Crystal</code> <code>x86_64 / ARM asm</code> <code>SQL</code></td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/python-original.svg" width="42" height="42" alt="Python" /></a>
+      <br><sub>Python</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/cplusplus-original.svg" width="42" height="42" alt="C++" /></a>
+      <br><sub>C++</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/go-original.svg" width="42" height="42" alt="Go" /></a>
+      <br><sub>Go</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/crystal-original.svg" width="42" height="42" alt="Crystal" /></a>
+      <br><sub>Crystal</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/postgresql-original.svg" width="42" height="42" alt="SQL" /></a>
+      <br><sub>SQL</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/cmake-original.svg" width="42" height="42" alt="CMake" /></a>
+      <br><sub>CMake</sub>
+    </td>
   </tr>
   <tr>
-    <td><b>LLM &amp; agents</b></td>
-    <td><code>PyTorch</code> <code>HF Transformers</code> <code>LangChain</code> <code>LiteLLM</code> <code>vLLM</code> <code>ChromaDB</code> <code>Mem0</code></td>
-  </tr>
-  <tr>
-    <td><b>Security</b></td>
-    <td><code>OWASP LLM Top 10</code> <code>OWASP Top 10</code> <code>AI red teaming</code> <code>agentic &amp; RAG security</code> <code>web app pentesting</code> <code>network security</code> <code>OSINT</code></td>
-  </tr>
-  <tr>
-    <td><b>Cryptography</b></td>
-    <td><code>AES</code> <code>RSA</code> <code>ECDSA</code> <code>SHA-256</code> <code>scrypt</code> <code>Fernet</code></td>
-  </tr>
-  <tr>
-    <td><b>Systems &amp; testing</b></td>
-    <td><code>POSIX sockets</code> <code>CMake</code> <code>ASan / UBSan</code> <code>pytest</code> <code>CTest</code> <code>Playwright</code></td>
-  </tr>
-  <tr>
-    <td><b>Data &amp; backend</b></td>
-    <td><code>NumPy</code> <code>pandas</code> <code>FastAPI</code> <code>Supabase</code> <code>Docker</code></td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/pytorch-original.svg" width="42" height="42" alt="PyTorch" /></a>
+      <br><sub>PyTorch</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/numpy-original.svg" width="42" height="42" alt="NumPy" /></a>
+      <br><sub>NumPy</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/pandas-original.svg" width="42" height="42" alt="pandas" /></a>
+      <br><sub>pandas</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/fastapi-original.svg" width="42" height="42" alt="FastAPI" /></a>
+      <br><sub>FastAPI</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/docker-original.svg" width="42" height="42" alt="Docker" /></a>
+      <br><sub>Docker</sub>
+    </td>
+    <td align="center" width="88">
+      <a href="#tech"><img src="./img/linux-original.svg" width="42" height="42" alt="Linux" /></a>
+      <br><sub>Linux</sub>
+    </td>
   </tr>
 </table>
+
+**Security** &nbsp;&nbsp; OWASP LLM Top 10 · OWASP Top 10 · AI red teaming · agentic &amp; RAG security · web app pentesting · network security · OSINT
+
+**Cryptography** &nbsp;&nbsp; AES · RSA · ECDSA · SHA-256 · scrypt · Fernet
+
+**LLM &amp; agents** &nbsp;&nbsp; HF Transformers · LangChain · LiteLLM · vLLM · ChromaDB · Mem0
+
+**Systems &amp; testing** &nbsp;&nbsp; POSIX sockets · ASan / UBSan · pytest · CTest · Playwright
 
 ---
 
 ## Focus Areas
+
+> What I go deep on.
 
 **LLM security** &nbsp; Adversarial evaluation across the OWASP LLM Top 10:
 prompt injection, jailbreaks, encoding bypass, indirect and RAG injection,
