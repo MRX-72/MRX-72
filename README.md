@@ -149,19 +149,14 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Tech Stack
 
-**Languages** &nbsp;&nbsp; Python · C++ · Go · Crystal · x86_64 and ARM assembly · SQL
-
-**AI / ML** &nbsp;&nbsp; PyTorch · HF Transformers · LangChain · ChromaDB · Mem0 · LiteLLM · vLLM · Ollama · OpenAI · Groq
-
-**Backend, data & cloud** &nbsp;&nbsp; FastAPI · REST · Supabase · Vercel · Docker · NumPy · pandas · yfinance
-
-**CLI, TUI & systems** &nbsp;&nbsp; POSIX sockets · terminal UIs · PowerShell
-
-**Security** &nbsp;&nbsp; OWASP LLM Top 10 · OWASP Top 10 · AI red teaming · agentic and RAG security · web app pentesting · network security · OSINT
-
-**Cryptography** &nbsp;&nbsp; AES · RSA · ECDSA · SHA-256 · scrypt · Fernet
-
-**Testing & tooling** &nbsp;&nbsp; pytest · CTest · Playwright · CMake · Git · GitHub Actions · Linux · macOS
+| | |
+| :-- | :-- |
+| **Languages** | Python · C++ · Go · Crystal · x86_64 & ARM assembly · SQL |
+| **LLM & agents** | PyTorch · HF Transformers · LangChain · LiteLLM · vLLM · ChromaDB · Mem0 |
+| **Security** | OWASP LLM Top 10 · OWASP Top 10 · AI red teaming · agentic & RAG security · web app pentesting · network security · OSINT |
+| **Cryptography** | AES · RSA · ECDSA · SHA-256 · scrypt · Fernet |
+| **Systems & testing** | POSIX sockets · CMake · ASan / UBSan · pytest · CTest · Playwright |
+| **Data & backend** | NumPy · pandas · FastAPI · Supabase · Docker |
 
 ---
 
