@@ -23,6 +23,26 @@
 
 ---
 
+## Recent Contributions
+
+<p align="center">
+  <a href="https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged"><img src="https://img.shields.io/badge/hashcat-2%20merged-2ea043?style=for-the-badge" alt="hashcat - 2 merged" /></a>
+  <a href="https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9"><img src="https://img.shields.io/badge/nmap-shipped%20%26%20credited-2ea043?style=for-the-badge" alt="nmap - shipped and credited" /></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/OWASP/AISVS/pull/1153"><img src="https://img.shields.io/badge/OWASP%20AISVS-merged-2ea043?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP AISVS - merged" /></a>
+  <a href="https://github.com/OWASP/DockSec/pull/169"><img src="https://img.shields.io/badge/OWASP%20DockSec-merged-2ea043?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP DockSec - merged" /></a>
+  <a href="https://github.com/OWASP/cve-lite-cli/pull/720"><img src="https://img.shields.io/badge/OWASP%20cve--lite--cli-merged-2ea043?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP cve-lite-cli - merged" /></a>
+  <a href="https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81"><img src="https://img.shields.io/badge/GenAI%20Red%20Team%20Lab-merged-2ea043?style=for-the-badge" alt="GenAI Red Team Lab - merged" /></a>
+</p>
+
+<p align="center">
+  <sub>Every badge links to the merged work · nmap's links to the changelog entry crediting the fix</sub>
+</p>
+
+---
+
 ## Research
 
 ### Where do production LLM guardrails actually fail?
@@ -138,28 +158,6 @@ runs ASan/UBSan on macOS and Linux.
 zapscan -p 1-1024 -c 256 scanme.nmap.org
 zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 ```
-
----
-
-## Upstream Contributions
-
-<p align="center">
-  <a href="https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged"><b>hashcat</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9"><b>nmap</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/OWASP/AISVS/pull/1153"><b>OWASP AISVS</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/OWASP/DockSec/pull/169"><b>OWASP DockSec</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/OWASP/cve-lite-cli/pull/720"><b>OWASP cve-lite-cli</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81"><b>GenAI Red Team Lab</b></a>
-</p>
-
-<p align="center">
-  <sub>Every name links to the merged work · nmap's goes to the changelog entry crediting the fix</sub>
-</p>
 
 ---
 
