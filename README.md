@@ -95,7 +95,7 @@ have not been run yet · every raw report and per-finding transcript is public</
 
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
-<sub>Python 3.9+ · MIT · 330 vectors · 240+ tests · multi-provider · multi-turn</sub>
+<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/330%20vectors-8957e5?style=flat-square" alt="330 vectors" /> <img src="https://img.shields.io/badge/240%2B%20tests-2ea043?style=flat-square&logo=pytest&logoColor=white" alt="240+ tests" /> <img src="https://img.shields.io/badge/multi--provider-0b7285?style=flat-square" alt="multi-provider" /> <img src="https://img.shields.io/badge/multi--turn-0b7285?style=flat-square" alt="multi-turn" />
 
 **A CLI that red-teams LLM applications against the OWASP LLM Top 10 and reports exactly which attacks got through.**
 
@@ -119,7 +119,7 @@ lrtf diff base.json current.json     # did your fix actually work?
 
 ### [QFcli](https://github.com/MRX-72/QFcli)
 
-<sub>Python 3.9+ · MIT · NumPy/pandas · walk-forward validation · Black-Litterman · no lookahead</sub>
+<a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/QFcli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white" alt="numpy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/walk--forward-8957e5?style=flat-square" alt="walk-forward" /> <img src="https://img.shields.io/badge/Black--Litterman-8957e5?style=flat-square" alt="Black-Litterman" /> <img src="https://img.shields.io/badge/no%20lookahead-2ea043?style=flat-square" alt="no lookahead" />
 
 **A quantitative research CLI for backtesting trading strategies and building portfolios, with the statistical checks to flag when a result is overfit or just noise.**
 
@@ -142,7 +142,7 @@ qfcli --portfolio AAPL MSFT NVDA --bl --view NVDA=0.18 --ff
 
 ### [zapscan](https://github.com/MRX-72/zapscan)
 
-<sub>C++17 · MIT · zero dependencies · ASan/UBSan in CI · CTest · text, JSON, CSV output</sub>
+<a href="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/zapscan/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++17" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/zero%20deps-2ea043?style=flat-square" alt="zero deps" /> <img src="https://img.shields.io/badge/ASan%20/%20UBSan-d1242f?style=flat-square" alt="ASan / UBSan" /> <img src="https://img.shields.io/badge/CTest-8957e5?style=flat-square" alt="CTest" /> <img src="https://img.shields.io/badge/JSON%20output-0b7285?style=flat-square" alt="JSON output" />
 
 **A fast, dependency-free TCP port scanner written from scratch in C++17, directly on BSD sockets. It never shells out to `nmap`.**
 
