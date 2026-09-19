@@ -149,14 +149,32 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Tech Stack
 
-| | |
-| :-- | :-- |
-| **Languages** | Python · C++ · Go · Crystal · x86_64 & ARM assembly · SQL |
-| **LLM & agents** | PyTorch · HF Transformers · LangChain · LiteLLM · vLLM · ChromaDB · Mem0 |
-| **Security** | OWASP LLM Top 10 · OWASP Top 10 · AI red teaming · agentic & RAG security · web app pentesting · network security · OSINT |
-| **Cryptography** | AES · RSA · ECDSA · SHA-256 · scrypt · Fernet |
-| **Systems & testing** | POSIX sockets · CMake · ASan / UBSan · pytest · CTest · Playwright |
-| **Data & backend** | NumPy · pandas · FastAPI · Supabase · Docker |
+<table>
+  <tr>
+    <td><b>Languages</b></td>
+    <td><code>Python</code> <code>C++</code> <code>Go</code> <code>Crystal</code> <code>x86_64 / ARM asm</code> <code>SQL</code></td>
+  </tr>
+  <tr>
+    <td><b>LLM &amp; agents</b></td>
+    <td><code>PyTorch</code> <code>HF Transformers</code> <code>LangChain</code> <code>LiteLLM</code> <code>vLLM</code> <code>ChromaDB</code> <code>Mem0</code></td>
+  </tr>
+  <tr>
+    <td><b>Security</b></td>
+    <td><code>OWASP LLM Top 10</code> <code>OWASP Top 10</code> <code>AI red teaming</code> <code>agentic &amp; RAG security</code> <code>web app pentesting</code> <code>network security</code> <code>OSINT</code></td>
+  </tr>
+  <tr>
+    <td><b>Cryptography</b></td>
+    <td><code>AES</code> <code>RSA</code> <code>ECDSA</code> <code>SHA-256</code> <code>scrypt</code> <code>Fernet</code></td>
+  </tr>
+  <tr>
+    <td><b>Systems &amp; testing</b></td>
+    <td><code>POSIX sockets</code> <code>CMake</code> <code>ASan / UBSan</code> <code>pytest</code> <code>CTest</code> <code>Playwright</code></td>
+  </tr>
+  <tr>
+    <td><b>Data &amp; backend</b></td>
+    <td><code>NumPy</code> <code>pandas</code> <code>FastAPI</code> <code>Supabase</code> <code>Docker</code></td>
+  </tr>
+</table>
 
 ---
 
