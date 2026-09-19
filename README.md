@@ -165,70 +165,38 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 <h2 id="tech">Tech Stack</h2>
 
-> Languages and tools I reach for most.
+> What I know, and what I build it with.
 
 <table>
   <tr>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/python-original.svg" width="42" height="42" alt="Python" /></a>
-      <br><sub>Python</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/cplusplus-original.svg" width="42" height="42" alt="C++" /></a>
-      <br><sub>C++</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/go-original.svg" width="42" height="42" alt="Go" /></a>
-      <br><sub>Go</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/crystal-original.svg" width="42" height="42" alt="Crystal" /></a>
-      <br><sub>Crystal</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/postgresql-original.svg" width="42" height="42" alt="SQL" /></a>
-      <br><sub>SQL</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/cmake-original.svg" width="42" height="42" alt="CMake" /></a>
-      <br><sub>CMake</sub>
-    </td>
+    <td valign="top"><b>Languages</b></td>
+    <td><img src="./img/python-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Python</code> <img src="./img/cplusplus-original.svg" width="18" height="18"  alt="" />&nbsp;<code>C++</code> <img src="./img/go-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Go</code> <img src="./img/crystal-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Crystal</code> <img src="./img/postgresql-original.svg" width="18" height="18"  alt="" />&nbsp;<code>PostgreSQL</code></td>
   </tr>
   <tr>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/pytorch-original.svg" width="42" height="42" alt="PyTorch" /></a>
-      <br><sub>PyTorch</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/numpy-original.svg" width="42" height="42" alt="NumPy" /></a>
-      <br><sub>NumPy</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/pandas-original.svg" width="42" height="42" alt="pandas" /></a>
-      <br><sub>pandas</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/fastapi-original.svg" width="42" height="42" alt="FastAPI" /></a>
-      <br><sub>FastAPI</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/docker-original.svg" width="42" height="42" alt="Docker" /></a>
-      <br><sub>Docker</sub>
-    </td>
-    <td align="center" width="88">
-      <a href="#tech"><img src="./img/linux-original.svg" width="42" height="42" alt="Linux" /></a>
-      <br><sub>Linux</sub>
-    </td>
+    <td valign="top"><b>Data&nbsp;&amp;&nbsp;infra</b></td>
+    <td><img src="./img/pytorch-original.svg" width="18" height="18"  alt="" />&nbsp;<code>PyTorch</code> <img src="./img/numpy-original.svg" width="18" height="18"  alt="" />&nbsp;<code>NumPy</code> <img src="./img/pandas-original.svg" width="18" height="18"  alt="" />&nbsp;<code>pandas</code> <img src="./img/fastapi-original.svg" width="18" height="18"  alt="" />&nbsp;<code>FastAPI</code> <img src="./img/docker-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Docker</code></td>
+  </tr>
+  <tr>
+    <td valign="top"><b>Security</b></td>
+    <td><code>OWASP LLM Top 10</code> <code>OWASP Top 10</code> <code>AI red teaming</code> <code>agentic &amp; RAG security</code> <code>web app pentesting</code> <code>network security</code> <code>OSINT</code></td>
+  </tr>
+  <tr>
+    <td valign="top"><b>LLM&nbsp;&amp;&nbsp;agents</b></td>
+    <td><code>HF Transformers</code> <code>LangChain</code> <code>LiteLLM</code> <code>vLLM</code> <code>ChromaDB</code> <code>Mem0</code></td>
+  </tr>
+  <tr>
+    <td valign="top"><b>Cryptography</b></td>
+    <td><code>AES</code> <code>RSA</code> <code>ECDSA</code> <code>SHA-256</code> <code>scrypt</code> <code>Fernet</code></td>
+  </tr>
+  <tr>
+    <td valign="top"><b>Low-level</b></td>
+    <td><code>x86_64 / ARM asm</code> <code>POSIX sockets</code> <code>CMake</code> <code>ASan / UBSan</code></td>
+  </tr>
+  <tr>
+    <td valign="top"><b>Testing</b></td>
+    <td><code>pytest</code> <code>CTest</code> <code>Playwright</code></td>
   </tr>
 </table>
-
-**Security** &nbsp;&nbsp; OWASP LLM Top 10 · OWASP Top 10 · AI red teaming · agentic &amp; RAG security · web app pentesting · network security · OSINT
-
-**Cryptography** &nbsp;&nbsp; AES · RSA · ECDSA · SHA-256 · scrypt · Fernet
-
-**LLM &amp; agents** &nbsp;&nbsp; HF Transformers · LangChain · LiteLLM · vLLM · ChromaDB · Mem0
-
-**Systems &amp; testing** &nbsp;&nbsp; POSIX sockets · ASan / UBSan · pytest · CTest · Playwright
 
 ---
 
