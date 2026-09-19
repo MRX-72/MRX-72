@@ -141,6 +141,28 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ---
 
+## Upstream Contributions
+
+<p align="center">
+  <a href="https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged"><b>hashcat</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9"><b>nmap</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/OWASP/AISVS/pull/1153"><b>OWASP AISVS</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/OWASP/DockSec/pull/169"><b>OWASP DockSec</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/OWASP/cve-lite-cli/pull/720"><b>OWASP cve-lite-cli</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81"><b>GenAI Red Team Lab</b></a>
+</p>
+
+<p align="center">
+  <sub>Every name links to the merged work · nmap's goes to the changelog entry crediting the fix</sub>
+</p>
+
+---
+
 ## Tech Stack
 
 **Languages**
