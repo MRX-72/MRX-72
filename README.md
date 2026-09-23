@@ -168,36 +168,33 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 > What I know, and what I build it with.
 
-<table>
-  <tr>
-    <td valign="top"><b>Languages</b></td>
-    <td><img src="./img/python-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Python</code> <img src="./img/cplusplus-original.svg" width="18" height="18"  alt="" />&nbsp;<code>C++</code> <img src="./img/go-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Go</code> <img src="./img/crystal-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Crystal</code> <img src="./img/postgresql-original.svg" width="18" height="18"  alt="" />&nbsp;<code>PostgreSQL</code></td>
-  </tr>
-  <tr>
-    <td valign="top"><b>Data&nbsp;&amp;&nbsp;infra</b></td>
-    <td><img src="./img/pytorch-original.svg" width="18" height="18"  alt="" />&nbsp;<code>PyTorch</code> <img src="./img/numpy-original.svg" width="18" height="18"  alt="" />&nbsp;<code>NumPy</code> <img src="./img/pandas-original.svg" width="18" height="18"  alt="" />&nbsp;<code>pandas</code> <img src="./img/fastapi-original.svg" width="18" height="18"  alt="" />&nbsp;<code>FastAPI</code> <img src="./img/docker-original.svg" width="18" height="18"  alt="" />&nbsp;<code>Docker</code></td>
-  </tr>
-  <tr>
-    <td valign="top"><b>Security</b></td>
-    <td><code>OWASP LLM Top 10</code> <code>OWASP Top 10</code> <code>AI red teaming</code> <code>agentic &amp; RAG security</code> <code>web app pentesting</code> <code>network security</code> <code>OSINT</code></td>
-  </tr>
-  <tr>
-    <td valign="top"><b>LLM&nbsp;&amp;&nbsp;agents</b></td>
-    <td><code>HF Transformers</code> <code>LangChain</code> <code>LiteLLM</code> <code>vLLM</code> <code>ChromaDB</code> <code>Mem0</code></td>
-  </tr>
-  <tr>
-    <td valign="top"><b>Cryptography</b></td>
-    <td><code>AES</code> <code>RSA</code> <code>ECDSA</code> <code>SHA-256</code> <code>scrypt</code> <code>Fernet</code></td>
-  </tr>
-  <tr>
-    <td valign="top"><b>Low-level</b></td>
-    <td><code>x86_64 / ARM asm</code> <code>POSIX sockets</code> <code>CMake</code> <code>ASan / UBSan</code></td>
-  </tr>
-  <tr>
-    <td valign="top"><b>Testing</b></td>
-    <td><code>pytest</code> <code>CTest</code> <code>Playwright</code></td>
-  </tr>
-</table>
+**Languages**
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white" alt="C" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/Crystal-000000?style=flat-square&logo=crystal&logoColor=white" alt="Crystal" /> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+
+**Data &amp; infra**
+
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" /> <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+
+**Security**
+
+<img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-30363d?style=flat-square" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/OWASP%20Top%2010-30363d?style=flat-square" alt="OWASP Top 10" /> <img src="https://img.shields.io/badge/AI%20red%20teaming-30363d?style=flat-square" alt="AI red teaming" /> <img src="https://img.shields.io/badge/agentic%20%26%20RAG%20security-30363d?style=flat-square" alt="agentic & RAG security" /> <img src="https://img.shields.io/badge/web%20app%20pentesting-30363d?style=flat-square" alt="web app pentesting" /> <img src="https://img.shields.io/badge/network%20security-30363d?style=flat-square" alt="network security" /> <img src="https://img.shields.io/badge/OSINT-30363d?style=flat-square" alt="OSINT" />
+
+**LLM &amp; agents**
+
+<img src="https://img.shields.io/badge/HF%20Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="HF Transformers" /> <img src="https://img.shields.io/badge/LangChain-30363d?style=flat-square" alt="LangChain" /> <img src="https://img.shields.io/badge/LiteLLM-30363d?style=flat-square" alt="LiteLLM" /> <img src="https://img.shields.io/badge/vLLM-30363d?style=flat-square" alt="vLLM" /> <img src="https://img.shields.io/badge/ChromaDB-30363d?style=flat-square" alt="ChromaDB" /> <img src="https://img.shields.io/badge/Mem0-30363d?style=flat-square" alt="Mem0" />
+
+**Cryptography**
+
+<img src="https://img.shields.io/badge/AES-30363d?style=flat-square" alt="AES" /> <img src="https://img.shields.io/badge/RSA-30363d?style=flat-square" alt="RSA" /> <img src="https://img.shields.io/badge/ECDSA-30363d?style=flat-square" alt="ECDSA" /> <img src="https://img.shields.io/badge/SHA--256-30363d?style=flat-square" alt="SHA-256" /> <img src="https://img.shields.io/badge/scrypt-30363d?style=flat-square" alt="scrypt" /> <img src="https://img.shields.io/badge/Fernet-30363d?style=flat-square" alt="Fernet" />
+
+**Low-level**
+
+<img src="https://img.shields.io/badge/x86__64%20%2F%20ARM%20asm-30363d?style=flat-square" alt="x86_64 / ARM asm" /> <img src="https://img.shields.io/badge/POSIX%20sockets-30363d?style=flat-square" alt="POSIX sockets" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/ASan%20%2F%20UBSan-30363d?style=flat-square" alt="ASan / UBSan" />
+
+**Testing**
+
+<img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest" /> <img src="https://img.shields.io/badge/CTest-30363d?style=flat-square" alt="CTest" /> <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
 
 ---
 
