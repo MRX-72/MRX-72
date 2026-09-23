@@ -178,7 +178,7 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 **Security**
 
-<img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-30363d?style=flat-square" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/OWASP%20Top%2010-30363d?style=flat-square" alt="OWASP Top 10" /> <img src="https://img.shields.io/badge/AI%20red%20teaming-30363d?style=flat-square" alt="AI red teaming" /> <img src="https://img.shields.io/badge/agentic%20%26%20RAG%20security-30363d?style=flat-square" alt="agentic & RAG security" /> <img src="https://img.shields.io/badge/web%20app%20pentesting-30363d?style=flat-square" alt="web app pentesting" /> <img src="https://img.shields.io/badge/network%20security-30363d?style=flat-square" alt="network security" /> <img src="https://img.shields.io/badge/OSINT-30363d?style=flat-square" alt="OSINT" />
+<img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-48A646?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/OWASP%20Top%2010-48A646?style=flat-square&logo=owasp&logoColor=white" alt="OWASP Top 10" /> <img src="https://img.shields.io/badge/AI%20red%20teaming-30363d?style=flat-square" alt="AI red teaming" /> <img src="https://img.shields.io/badge/agentic%20%26%20RAG%20security-30363d?style=flat-square" alt="agentic & RAG security" /> <img src="https://img.shields.io/badge/web%20app%20pentesting-30363d?style=flat-square" alt="web app pentesting" /> <img src="https://img.shields.io/badge/network%20security-30363d?style=flat-square" alt="network security" /> <img src="https://img.shields.io/badge/OSINT-30363d?style=flat-square" alt="OSINT" />
 
 **LLM &amp; agents**
 
@@ -194,7 +194,7 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 **Testing**
 
-<img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest" /> <img src="https://img.shields.io/badge/CTest-30363d?style=flat-square" alt="CTest" /> <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
+<img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest" /> <img src="https://img.shields.io/badge/CTest-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CTest" /> <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
 
 ---
 
