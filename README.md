@@ -20,17 +20,17 @@
 
 > Work merged into upstream security tooling.
 
-| Project | Contribution | |
+| Project | Contribution | Upstream |
 | :-- | :-- | :-- |
-| **[CrowdStrike/falconpy](https://github.com/CrowdStrike/falconpy/pull/1510)** | preserve non-JSON response bodies instead of silently discarding them | merged |
-| **[hashcat](https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | zlib symbol loading on macOS; leaks in config teardown; unchecked lock/unlock return values; 22000/22001 outfile line written as loaded | 4 merged |
-| **[NetExec](https://github.com/Pennyw0rth/NetExec/pull/1428)** | SSH login timeouts now fail cleanly instead of raising | merged |
-| **[nmap](https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9)** | Ncat no longer signals its own process group | shipped, credited |
-| **[OWASP AISVS](https://github.com/OWASP/AISVS/pull/1153)** | missing controls in the Appendix B inventory | merged |
-| **[OWASP DockSec](https://github.com/OWASP/DockSec/pull/169)** | passwords leaking from connection-string URLs | merged |
-| **[OWASP cve-lite-cli](https://github.com/OWASP/cve-lite-cli/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | batches FIRST.org EPSS queries for full CVE coverage; accurate error hints for unreadable lockfiles; scanner comparison analysis | 3 merged |
-| **[VirusTotal/yara](https://github.com/VirusTotal/yara/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | `yr_get_version` runtime version API; nine more ELF `e_machine` values exposed | 2 merged |
-| **[GenAI Red Team Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81)** | memory-poisoning exploit module | merged |
+| **[CrowdStrike/falconpy](https://github.com/CrowdStrike/falconpy/pull/1510)** | preserve non-JSON response bodies instead of silently discarding them | 516★ · merged |
+| **[hashcat](https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | zlib symbol loading on macOS; leaks in config teardown; unchecked lock/unlock return values; 22000/22001 outfile line written as loaded | 26.9k★ · 4 merged |
+| **[NetExec](https://github.com/Pennyw0rth/NetExec/pull/1428)** | SSH login timeouts now fail cleanly instead of raising | 5.9k★ · merged |
+| **[nmap](https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9)** | Ncat no longer signals its own process group | 13.7k★ · credited |
+| **[OWASP AISVS](https://github.com/OWASP/AISVS/pull/1153)** | missing controls in the Appendix B inventory | 456★ · merged |
+| **[OWASP DockSec](https://github.com/OWASP/DockSec/pull/169)** | passwords leaking from connection-string URLs | 490★ · merged |
+| **[OWASP cve-lite-cli](https://github.com/OWASP/cve-lite-cli/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | batches FIRST.org EPSS queries for full CVE coverage; accurate error hints for unreadable lockfiles; scanner comparison analysis | 738★ · 3 merged |
+| **[VirusTotal/yara](https://github.com/VirusTotal/yara/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | `yr_get_version` runtime version API; nine more ELF `e_machine` values exposed | 9.9k★ · 2 merged |
+| **[GenAI Red Team Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81)** | memory-poisoning exploit module | 54★ · merged |
 
 ---
 
@@ -98,45 +98,26 @@ have not been run yet · every raw report and per-finding transcript is public</
 
 ### [llm-red-team-cli](https://github.com/MRX-72/llm-red-team-cli)
 
-<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-000000?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/330%20vectors-8957e5?style=flat-square" alt="330 vectors" /> <img src="https://img.shields.io/badge/240%2B%20tests-2ea043?style=flat-square&logo=pytest&logoColor=white" alt="240+ tests" /> <img src="https://img.shields.io/badge/multi--provider-0b7285?style=flat-square" alt="multi-provider" /> <img src="https://img.shields.io/badge/multi--turn-0b7285?style=flat-square" alt="multi-turn" />
+<a href="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/llm-red-team-cli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/llm-red-team-cli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/330%20vectors-8957e5?style=flat-square" alt="330 vectors" />
 
-**A CLI that red-teams LLM applications against the OWASP LLM Top 10 and reports exactly which attacks got through.**
-
-**How it works:** each scan generates a random canary token and plants it in the
-system prompt with an instruction never to reveal it. Then 330 attack vectors
-(prompt injection, jailbreaks, encoding tricks, RAG poisoning, tool abuse, PII
-leakage) all try to extract it. A finding is just a string match, so it is
-reproducible, costs one API call per vector, and needs no second LLM to judge the
-result. For risks a canary can't capture, dedicated detectors take over: `regex`
-for SSNs and key formats, `repetition` for unbounded output, `absent` for missing
-hedges. 15 vectors are multi-turn crescendo attacks, since guardrails that hold
-for one message often give way over five. Works with any provider through LiteLLM
-(OpenAI, Anthropic, Gemini, Groq, Ollama), and `diff` lets you check for regressions in CI.
+**Red-teams an LLM app against the OWASP LLM Top 10 and reports exactly which attacks got through.**
+A random canary planted in the system prompt makes every finding a reproducible string
+match: one API call per vector, no second LLM to judge. Works with any provider via LiteLLM.
 
 ```bash
 lrtf scan gpt-4o --tui               # live view as each vector lands
-lrtf scan gpt-4o --system mine.txt   # test your own prompt, not a toy one
 lrtf compare gpt-4o claude-sonnet-4-5 ollama/llama3
 lrtf diff base.json current.json     # did your fix actually work?
 ```
 
 ### [QFcli](https://github.com/MRX-72/QFcli)
 
-<a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/QFcli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/Python%203.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+" /> <img src="https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white" alt="numpy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/walk--forward-8957e5?style=flat-square" alt="walk-forward" /> <img src="https://img.shields.io/badge/Black--Litterman-8957e5?style=flat-square" alt="Black-Litterman" /> <img src="https://img.shields.io/badge/no%20lookahead-2ea043?style=flat-square" alt="no lookahead" />
+<a href="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/QFcli/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/QFcli/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/walk--forward-8957e5?style=flat-square" alt="walk-forward" />
 
-**A quantitative research CLI for backtesting trading strategies and building portfolios, with the statistical checks to flag when a result is overfit or just noise.**
-
-**How it works:** it pulls OHLCV data from Yahoo Finance and runs strategies such as
-SMA cross, momentum and RSI reversion (or your own). Signals are shifted one bar
-to rule out lookahead bias, costs and slippage are charged on turnover, and
-every result is compared with buy-and-hold (alpha, information ratio, hit rate).
-Parameters are chosen with **walk-forward validation**: tune in-sample, evaluate on
-unseen windows, and optionally blend the grid as an ensemble to cut selection
-variance. Positions can be sized by target volatility or fractional Kelly. For
-allocation it offers min-variance, tangency and Black-Litterman portfolios
-over Ledoit-Wolf shrinkage or PCA-factor covariance, plus a Fama-French factor
-overlay. Bootstrap and Jobson-Korkie tests show whether a Sharpe ratio is real.
-Built on numpy and pandas only.
+**Backtests strategies and builds portfolios, with the statistical checks that flag an overfit result.**
+Signals are lagged one bar (no lookahead), costs are charged on turnover, and every result is
+benchmarked to buy-and-hold. Walk-forward validation, Black-Litterman allocation, and bootstrap
+significance tests on the Sharpe.
 
 ```bash
 qfcli --backtest AAPL --walk-forward --ensemble rank --grid "fast=10,20;slow=40,60"
@@ -145,19 +126,11 @@ qfcli --portfolio AAPL MSFT NVDA --bl --view NVDA=0.18 --ff
 
 ### [zapscan](https://github.com/MRX-72/zapscan)
 
-<a href="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/zapscan/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++17" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/zero%20deps-2ea043?style=flat-square" alt="zero deps" /> <img src="https://img.shields.io/badge/ASan%20/%20UBSan-d1242f?style=flat-square" alt="ASan / UBSan" /> <img src="https://img.shields.io/badge/CTest-8957e5?style=flat-square" alt="CTest" /> <img src="https://img.shields.io/badge/JSON%20output-0b7285?style=flat-square" alt="JSON output" />
+<a href="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml"><img src="https://github.com/MRX-72/zapscan/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <a href="https://github.com/MRX-72/zapscan/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3da639?style=flat-square" alt="MIT" /></a> <img src="https://img.shields.io/badge/zero%20deps-2ea043?style=flat-square" alt="zero deps" />
 
-**A fast, dependency-free TCP port scanner written from scratch in C++17, directly on BSD sockets. It never shells out to `nmap`.**
-
-**How it works:** targets (IPs, hostnames, CIDR, ranges) and port specs are fully
-parsed and validated before any socket opens. A fixed pool of worker threads pulls
-`(host, port)` pairs from a shared atomic index, interleaved across hosts so one
-slow host can't stall the rest. Each probe runs a non-blocking `connect()` with a
-`poll()` timeout, and open ports get a banner grabbed on the same connection.
-Results are sorted before output, so reports are stable no matter what order
-probes finish in. Output as text, JSON or CSV (CSV is escaped against formula injection).
-Integration tests bind real loopback listeners with no network mocking, and CI
-runs ASan/UBSan on macOS and Linux.
+**A dependency-free TCP port scanner in C++17 on raw BSD sockets. It never shells out to `nmap`.**
+Non-blocking `connect()` with `poll()` timeouts, a bounded worker pool, banner grabbing, and
+stable text/JSON/CSV output. CI runs ASan/UBSan on macOS and Linux.
 
 ```bash
 zapscan -p 1-1024 -c 256 scanme.nmap.org
@@ -166,67 +139,17 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ---
 
-<h2 id="tech">Tech Stack</h2>
-
-> What I know, and what I build it with.
-
-**Languages**
-
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white" alt="C" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/Crystal-000000?style=flat-square&logo=crystal&logoColor=white" alt="Crystal" /> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-
-**Data &amp; infra**
-
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" /> <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" /> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-
-**Security**
-
-<img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-48A646?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM Top 10" /> <img src="https://img.shields.io/badge/OWASP%20Top%2010-48A646?style=flat-square&logo=owasp&logoColor=white" alt="OWASP Top 10" /> <img src="https://img.shields.io/badge/AI%20red%20teaming-30363d?style=flat-square" alt="AI red teaming" /> <img src="https://img.shields.io/badge/agentic%20%26%20RAG%20security-30363d?style=flat-square" alt="agentic & RAG security" /> <img src="https://img.shields.io/badge/web%20app%20pentesting-30363d?style=flat-square" alt="web app pentesting" /> <img src="https://img.shields.io/badge/network%20security-30363d?style=flat-square" alt="network security" /> <img src="https://img.shields.io/badge/OSINT-30363d?style=flat-square" alt="OSINT" />
-
-**LLM &amp; agents**
-
-<img src="https://img.shields.io/badge/HF%20Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="HF Transformers" /> <img src="https://img.shields.io/badge/LangChain-30363d?style=flat-square" alt="LangChain" /> <img src="https://img.shields.io/badge/LiteLLM-30363d?style=flat-square" alt="LiteLLM" /> <img src="https://img.shields.io/badge/vLLM-30363d?style=flat-square" alt="vLLM" /> <img src="https://img.shields.io/badge/ChromaDB-30363d?style=flat-square" alt="ChromaDB" /> <img src="https://img.shields.io/badge/Mem0-30363d?style=flat-square" alt="Mem0" />
-
-**Cryptography**
-
-<img src="https://img.shields.io/badge/AES-30363d?style=flat-square" alt="AES" /> <img src="https://img.shields.io/badge/RSA-30363d?style=flat-square" alt="RSA" /> <img src="https://img.shields.io/badge/ECDSA-30363d?style=flat-square" alt="ECDSA" /> <img src="https://img.shields.io/badge/SHA--256-30363d?style=flat-square" alt="SHA-256" /> <img src="https://img.shields.io/badge/scrypt-30363d?style=flat-square" alt="scrypt" /> <img src="https://img.shields.io/badge/Fernet-30363d?style=flat-square" alt="Fernet" />
-
-**Low-level**
-
-<img src="https://img.shields.io/badge/x86__64%20%2F%20ARM%20asm-30363d?style=flat-square" alt="x86_64 / ARM asm" /> <img src="https://img.shields.io/badge/POSIX%20sockets-30363d?style=flat-square" alt="POSIX sockets" /> <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CMake" /> <img src="https://img.shields.io/badge/ASan%20%2F%20UBSan-30363d?style=flat-square" alt="ASan / UBSan" />
-
-**Testing**
-
-<img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest" /> <img src="https://img.shields.io/badge/CTest-064F8C?style=flat-square&logo=cmake&logoColor=white" alt="CTest" /> <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
-
----
-
 ## Focus Areas
 
-> What I go deep on.
+**LLM security** &nbsp; Prompt injection, jailbreaks, encoding bypass, RAG injection and multi-turn chains, scored by deterministic canary detection.
 
-**LLM security** &nbsp; Adversarial evaluation across the OWASP LLM Top 10:
-prompt injection, jailbreaks, encoding bypass, indirect and RAG injection,
-system-prompt extraction, and multi-turn crescendo chains. Detection is
-canary-based and deterministic — a secret planted in the system prompt makes
-every finding a reproducible string match, with no second model grading the first.
+**Agentic AI security** &nbsp; Memory poisoning and excessive-agency abuse across LangChain, ChromaDB and Mem0, and the integrity checks that catch it.
 
-**Agentic AI security** &nbsp; The surface that opens once a model has persistent
-memory and tools. Memory poisoning across LangChain, ChromaDB, and Mem0 (identity
-shift, behavior drift, data exfiltration, bias injection), tool-use and
-excessive-agency abuse, and the integrity hashing and embedding-anomaly detection
-that catches it.
+**Systems & offensive security** &nbsp; POSIX-socket network tooling, x86_64 assembly, email forensics, and dependency CVE analysis via OSV.
 
-**Systems & offensive security** &nbsp; Low-level network tooling: non-blocking
-TCP scanning over POSIX sockets with a bounded worker pool, banner grabbing, and
-x86_64 assembly. Plus email forensics (SMTP relay-path reconstruction,
-SPF/DKIM/DMARC, punycode detection, offline GeoIP) and dependency CVE analysis
-via OSV.
+**Quantitative finance** &nbsp; Backtesting that catches its own overfitting: no lookahead, costs on turnover, walk-forward validation.
 
-**Quantitative finance** &nbsp; Backtesting with the checks that catch
-overfitting: one-bar-lagged signals (no lookahead), costs charged on turnover,
-and every result benchmarked to buy-and-hold. Walk-forward validation,
-Black-Litterman allocation over Ledoit-Wolf and PCA-factor covariance, and
-bootstrap and Jobson-Korkie significance tests.
+<sub>Python · C/C++ · Go · PyTorch · NumPy/pandas · FastAPI · Docker · PostgreSQL</sub>
 
 ---
 
