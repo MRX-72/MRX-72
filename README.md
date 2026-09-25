@@ -34,6 +34,14 @@
 
 ---
 
+## Tech Stack
+
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white" alt="C" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" /> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</p>
+
+---
+
 ## Research
 
 ### Where do production LLM guardrails actually fail?
@@ -148,8 +156,6 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 **Systems & offensive security** &nbsp; POSIX-socket network tooling, x86_64 assembly, email forensics, and dependency CVE analysis via OSV.
 
 **Quantitative finance** &nbsp; Backtesting that catches its own overfitting: no lookahead, costs on turnover, walk-forward validation.
-
-<sub>Python · C/C++ · Go · PyTorch · NumPy/pandas · FastAPI · Docker · PostgreSQL</sub>
 
 ---
 
