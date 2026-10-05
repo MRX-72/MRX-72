@@ -1,7 +1,7 @@
-<h1 align="center">LLM Security &nbsp;·&nbsp; Systems Programming</h1>
+<h1 align="center">MRX-72 &nbsp;·&nbsp; LLM Security &amp; Systems Programming</h1>
 
 <p align="center">
-  <em>Adversarial testing, low-level optimization, and quantitative research.</em>
+  <em>MRX-72 — adversarial testing, low-level optimization, and quantitative research.</em>
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats-dark.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats-light.svg" />
-      <img src="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats-dark.svg" alt="GitHub stats" width="470" />
+      <img src="https://raw.githubusercontent.com/MRX-72/MRX-72/main/stats-dark.svg" alt="MRX-72 — GitHub stats" width="470" />
     </picture>
   </a>
 </p>
