@@ -133,6 +133,7 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 | **[nmap](https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9)** | Ncat no longer signals its own process group; Nping passes the correct sockaddr length (fixes `--tcp-connect` and unprivileged `--udp` on macOS/BSD) | 13.7k★ | 2 landed |
 | **[Nikto](https://github.com/sullo/nikto/pull/916)** | preserve the root path when stripping a trailing slash for `-noslash` | 10.7k★ | merged |
 | **[VirusTotal/yara](https://github.com/VirusTotal/yara/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | `yr_get_version` runtime version API; nine more ELF `e_machine` values exposed | 9.9k★ | 2 merged |
+| **[NVIDIA/garak](https://github.com/NVIDIA/garak/pull/2270)** | scope the ApiKey detector's safe-token check to each match, so one safe example no longer masks a real credential | 9.5k★ | merged |
 | **[NetExec](https://github.com/Pennyw0rth/NetExec/pull/1428)** | SSH login timeouts now fail cleanly instead of raising | 5.9k★ | merged |
 | **[OWASP cve-lite-cli](https://github.com/OWASP/cve-lite-cli/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | batches FIRST.org EPSS queries for full CVE coverage; flags override floors that exceed every declaring package's range; accurate error hints for unreadable lockfiles; scanner comparison analysis | 758★ | 4 merged |
 | **[CrowdStrike/falconpy](https://github.com/CrowdStrike/falconpy/pull/1510)** | preserve non-JSON response bodies instead of silently discarding them | 516★ | merged |
