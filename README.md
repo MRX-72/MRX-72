@@ -16,35 +16,6 @@
 
 ---
 
-## Recent Contributions
-
-> Work merged into upstream security tooling.
-
-| Project | Contribution | Stars | Status |
-| :-- | :-- | --: | :-- |
-| **[sqlmap](https://github.com/sqlmapproject/sqlmap/pull/6136)** | make `test_ssti` and `test_xpath` runnable standalone | 38.6k★ | merged |
-| **[Nuclei](https://github.com/projectdiscovery/nuclei/pull/7766)** | zstd decoder goroutine leak that could OOM-kill long scans (dependency bump, closes #7749) | 31.5k★ | merged |
-| **[hashcat](https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | zlib symbol loading on macOS; leaks in config teardown; unchecked lock/unlock return values; 22000/22001 outfile line written as loaded | 26.9k★ | 4 merged |
-| **[nmap](https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9)** | Ncat no longer signals its own process group; Nping passes the correct sockaddr length (fixes `--tcp-connect` and unprivileged `--udp` on macOS/BSD) | 13.7k★ | 2 landed |
-| **[Nikto](https://github.com/sullo/nikto/pull/916)** | preserve the root path when stripping a trailing slash for `-noslash` | 10.7k★ | merged |
-| **[VirusTotal/yara](https://github.com/VirusTotal/yara/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | `yr_get_version` runtime version API; nine more ELF `e_machine` values exposed | 9.9k★ | 2 merged |
-| **[NetExec](https://github.com/Pennyw0rth/NetExec/pull/1428)** | SSH login timeouts now fail cleanly instead of raising | 5.9k★ | merged |
-| **[OWASP cve-lite-cli](https://github.com/OWASP/cve-lite-cli/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | batches FIRST.org EPSS queries for full CVE coverage; flags override floors that exceed every declaring package's range; accurate error hints for unreadable lockfiles; scanner comparison analysis | 758★ | 4 merged |
-| **[CrowdStrike/falconpy](https://github.com/CrowdStrike/falconpy/pull/1510)** | preserve non-JSON response bodies instead of silently discarding them | 516★ | merged |
-| **[OWASP DockSec](https://github.com/OWASP/DockSec/pull/169)** | passwords leaking from connection-string URLs | 490★ | merged |
-| **[OWASP AISVS](https://github.com/OWASP/AISVS/pull/1153)** | missing controls in the Appendix B inventory | 456★ | merged |
-| **[GenAI Red Team Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81)** | memory-poisoning exploit module | 54★ | merged |
-
----
-
-## Tech Stack
-
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white" alt="C" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-</p>
-
----
-
 ## Research
 
 ### Where do production LLM guardrails actually fail?
@@ -150,6 +121,27 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ---
 
+## Recent Contributions
+
+> Work merged into upstream security tooling.
+
+| Project | Contribution | Stars | Status |
+| :-- | :-- | --: | :-- |
+| **[sqlmap](https://github.com/sqlmapproject/sqlmap/pull/6136)** | make `test_ssti` and `test_xpath` runnable standalone | 38.6k★ | merged |
+| **[Nuclei](https://github.com/projectdiscovery/nuclei/pull/7766)** | zstd decoder goroutine leak that could OOM-kill long scans (dependency bump, closes #7749) | 31.5k★ | merged |
+| **[hashcat](https://github.com/hashcat/hashcat/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | zlib symbol loading on macOS; leaks in config teardown; unchecked lock/unlock return values; 22000/22001 outfile line written as loaded | 26.9k★ | 4 merged |
+| **[nmap](https://github.com/nmap/nmap/blob/8a11c8c2042d9c594bed0e75d073e590d048dab7/CHANGELOG#L5-L9)** | Ncat no longer signals its own process group; Nping passes the correct sockaddr length (fixes `--tcp-connect` and unprivileged `--udp` on macOS/BSD) | 13.7k★ | 2 landed |
+| **[Nikto](https://github.com/sullo/nikto/pull/916)** | preserve the root path when stripping a trailing slash for `-noslash` | 10.7k★ | merged |
+| **[VirusTotal/yara](https://github.com/VirusTotal/yara/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | `yr_get_version` runtime version API; nine more ELF `e_machine` values exposed | 9.9k★ | 2 merged |
+| **[NetExec](https://github.com/Pennyw0rth/NetExec/pull/1428)** | SSH login timeouts now fail cleanly instead of raising | 5.9k★ | merged |
+| **[OWASP cve-lite-cli](https://github.com/OWASP/cve-lite-cli/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | batches FIRST.org EPSS queries for full CVE coverage; flags override floors that exceed every declaring package's range; accurate error hints for unreadable lockfiles; scanner comparison analysis | 758★ | 4 merged |
+| **[CrowdStrike/falconpy](https://github.com/CrowdStrike/falconpy/pull/1510)** | preserve non-JSON response bodies instead of silently discarding them | 516★ | merged |
+| **[OWASP DockSec](https://github.com/OWASP/DockSec/pull/169)** | passwords leaking from connection-string URLs | 490★ | merged |
+| **[OWASP AISVS](https://github.com/OWASP/AISVS/pull/1153)** | missing controls in the Appendix B inventory | 456★ | merged |
+| **[GenAI Red Team Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab/pull/81)** | memory-poisoning exploit module | 54★ | merged |
+
+---
+
 ## Focus Areas
 
 **LLM security** &nbsp; Prompt injection, jailbreaks, encoding bypass, RAG injection and multi-turn chains, scored by deterministic canary detection.
@@ -159,6 +151,14 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 **Systems & offensive security** &nbsp; POSIX-socket network tooling, x86_64 assembly, email forensics, and dependency CVE analysis via OSV.
 
 **Quantitative finance** &nbsp; Backtesting that catches its own overfitting: no lookahead, costs on turnover, walk-forward validation.
+
+---
+
+## Tech Stack
+
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white" alt="C" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" /> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="pandas" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</p>
 
 ---
 
@@ -173,5 +173,5 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 ---
 
 <p align="center">
-  <a href="mailto:theaiguy369@gmail.com">theaiguy369@gmail.com</a>
+  <a href="https://github.com/MRX-72"><b>@MRX-72</b></a> &nbsp;·&nbsp; reach me by opening an issue on any of my repositories
 </p>
