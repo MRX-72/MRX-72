@@ -1,4 +1,4 @@
-<h1 align="center">MRX-72 &nbsp;·&nbsp; LLM Security &amp; Systems Programming</h1>
+<h1 align="center">MRX-72 &nbsp;·&nbsp; Offsec</h1>
 
 <p align="center">
   <em>MRX-72 — adversarial testing, low-level optimization, and quantitative research.</em>
