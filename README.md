@@ -124,42 +124,29 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Focus Areas
 
-**AI security** &nbsp; Most of my time goes here. I test LLMs and agents for the failures that aren't jailbreaks, like a model handing over an API key because someone asked it to reformat a config file.
+#### AI security
+Most of my time goes here. I test LLMs and agents for the failures that aren't jailbreaks, like a model handing over an API key because someone asked it to reformat a config file.
 
-**Reverse engineering** &nbsp; I spend a lot of evenings in Ghidra and GDB, and pwntools when there's something to exploit.
+#### Reverse engineering
+I spend a lot of evenings in Ghidra and GDB, and pwntools when there's something to exploit.
 
-**Network security** &nbsp; I like writing my own tools for this. zapscan started as a way to understand what nmap actually does under the hood.
+#### Network security
+I like writing my own tools for this. [zapscan](https://github.com/MRX-72/zapscan) started as a way to understand what nmap actually does under the hood.
 
-**Open source** &nbsp; When a tool I use breaks, I try to fix it upstream. That's how I ended up with patches in Metasploit, sqlmap, hashcat and a few others.
+#### Open source
+When a tool I use breaks, I try to fix it upstream. That's how I ended up with patches in Metasploit, sqlmap, hashcat and a few others.
 
 ---
 
 ## Tech Stack
 
-<p>
-<b>Languages</b><br/>
-Python &nbsp;·&nbsp; C++ &nbsp;·&nbsp; C &nbsp;·&nbsp; Go &nbsp;·&nbsp; Crystal &nbsp;·&nbsp; Bash
-</p>
-
-<p>
-<b>Low-Level &amp; RE</b><br/>
-x86-64 Asm &nbsp;·&nbsp; Ghidra &nbsp;·&nbsp; GDB &nbsp;·&nbsp; pwndbg &nbsp;·&nbsp; pwntools &nbsp;·&nbsp; radare2 &nbsp;·&nbsp; Cutter
-</p>
-
-<p>
-<b>Network Security</b><br/>
-Nmap &nbsp;·&nbsp; Wireshark &nbsp;·&nbsp; tcpdump &nbsp;·&nbsp; Scapy &nbsp;·&nbsp; NetExec &nbsp;·&nbsp; aircrack-ng
-</p>
-
-<p>
-<b>Offensive Tooling</b><br/>
-Metasploit &nbsp;·&nbsp; sqlmap &nbsp;·&nbsp; hashcat &nbsp;·&nbsp; Nuclei &nbsp;·&nbsp; YARA &nbsp;·&nbsp; garak &nbsp;·&nbsp; Nikto
-</p>
-
-<p>
-<b>OS</b><br/>
-BlackArch &nbsp;·&nbsp; SamuraiWTF
-</p>
+| Area | Tools |
+| :-- | :-- |
+| **Languages** | `Python` `C++` `C` `Go` `Crystal` `Bash` |
+| **Low-Level &amp; RE** | `x86-64 Asm` `Ghidra` `GDB` `pwndbg` `pwntools` `radare2` `Cutter` |
+| **Network Security** | `Nmap` `Wireshark` `tcpdump` `Scapy` `NetExec` `aircrack-ng` |
+| **Offensive Tooling** | `Metasploit` `sqlmap` `hashcat` `Nuclei` `YARA` `garak` `Nikto` |
+| **OS** | `BlackArch` `SamuraiWTF` `macOS` |
 
 ---
 
