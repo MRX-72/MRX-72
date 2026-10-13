@@ -124,13 +124,13 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Focus Areas
 
-**LLM security** &nbsp; Prompt injection, jailbreaks, encoding bypass, RAG injection and multi-turn chains, scored by deterministic canary detection.
+**AI security** &nbsp; Most of my time goes here. I test LLMs and agents for the failures that aren't jailbreaks, like a model handing over an API key because someone asked it to reformat a config file.
 
-**Agentic AI security** &nbsp; Memory poisoning and excessive-agency abuse across LangChain, ChromaDB and Mem0, and the integrity checks that catch it.
+**Reverse engineering** &nbsp; I spend a lot of evenings in Ghidra and GDB, and pwntools when there's something to exploit.
 
-**Systems & offensive security** &nbsp; POSIX-socket network tooling, x86_64 assembly, email forensics, and dependency CVE analysis via OSV.
+**Network security** &nbsp; I like writing my own tools for this. zapscan started as a way to understand what nmap actually does under the hood.
 
-**Quantitative finance** &nbsp; Backtesting that catches its own overfitting: no lookahead, costs on turnover, walk-forward validation.
+**Open source** &nbsp; When a tool I use breaks, I try to fix it upstream. That's how I ended up with patches in Metasploit, sqlmap, hashcat and a few others.
 
 ---
 
