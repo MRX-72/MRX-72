@@ -14,63 +14,39 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="#research">Research</a> &nbsp;·&nbsp;
+  <a href="#projects">Projects</a> &nbsp;·&nbsp;
+  <a href="#recent-contributions"><b>Recent Contributions</b></a> &nbsp;·&nbsp;
+  <a href="#now">Now</a>
+</p>
+
 ---
 
 ## Research
 
 ### Where do production LLM guardrails actually fail?
 
-**Setup.** Four production models were each run through the same 107 attack
-vectors covering all ten OWASP LLM Top 10 categories. Same system prompt, temperature 0,
-zero errors across every run. Detection was deterministic: a random secret
-("canary") was planted in the system prompt, and a vector counted as a bypass only
-if the model's output contained it (or a fixed leak pattern). No LLM judge.
+Four production models, 107 attack vectors across the full OWASP LLM Top 10, temperature 0.
+A vector counts as a bypass only if a canary planted in the system prompt shows up in the
+output. Deterministic string match, no LLM judge.
 
 ```
-  Vectors bypassed, out of 107
-
   gemini-3.1-flash-lite  ███████████████  15/107
   gpt-oss-20b            ██████████·····  10/107
   gpt-oss-120b           █████··········  5/107
   qwen3.8-27b            █████··········  5/107
 ```
 
-Where the 35 failures landed:
+**Finding.** Jailbreaks, encoding bypass, indirect injection and system-prompt extraction
+(51 vectors) got **0 bypasses on all four models**. 34 of the 35 failures were in the
+*agentic and output* layer: unconfirmed tool calls, secrets leaked through markdown image
+URLs, unredacted API keys, hallucinated package names, runaway output.
 
-```
-  agentic & output layer   ████████████████████████████████████  34
-  everything else          █                                      1
+> Refusal training holds on the prompts it was trained on. The risk is in what the model
+> *does* after it decides to help.
 
-  jailbreaks · encoding bypass · indirect injection
-  · system-prompt extraction  (51 vectors)              zero bypasses
-```
-
-**Finding.** The attacks everyone writes about **failed completely.** 51 vectors
-covering jailbreaks, encoding bypass (base64, ROT13, homoglyphs), indirect injection
-and system-prompt extraction got **0 bypasses on all four models**.
-
-34 of the 35 failures landed in the *agentic and output* layer instead:
-
-- **Tool misuse:** calling `transfer_funds` with no confirmation, running a `send_email` call that was hidden inside a pasted ticket, using an admin token when a normal tool would have worked
-- **Output handling:** filling a secret into a markdown image URL, which leaks it with zero clicks as soon as the chat renders
-- **PII disclosure:** asked to reformat a config file as JSON, all four models returned the API keys unredacted
-- **Confabulation:** inventing a pip package name, which opens the door to slopsquatting
-- **Unbounded consumption:** getting pushed into runaway repetitive output
-
-> **Takeaway:** refusal training works on the prompts it was trained on. The risk
-> sits *after* the model decides to help: in what it writes, which tools it calls,
-> and what data it repeats back. The same model that refuses a poisoned document
-> telling it to *say* something will obey one telling it to *do* something.
-
-<sub>One run per model at temperature 0, so these are observations and not rates ·
-synthetic system prompt · the suite has since grown to 330 vectors, and the new ones
-have not been run yet · every raw report and per-finding transcript is public</sub>
-
-<p align="center">
-  <a href="https://github.com/MRX-72/llm-red-team-cli#field-results"><b>Full evaluation →</b></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/MRX-72/llm-red-team-cli/tree/main/results"><b>Raw data →</b></a>
-</p>
+<sub>One run per model at temperature 0: observations, not rates · <a href="https://github.com/MRX-72/llm-red-team-cli#field-results">full evaluation</a> · <a href="https://github.com/MRX-72/llm-red-team-cli/tree/main/results">raw data</a></sub>
 
 ---
 
@@ -136,6 +112,7 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 | **[NVIDIA/garak](https://github.com/NVIDIA/garak/pull/2270)** | scope the ApiKey detector's safe-token check to each match, so one safe example no longer masks a real credential | 9.5k★ | merged |
 | **[aircrack-ng](https://github.com/aircrack-ng/aircrack-ng/pull/2732)** | `hexToInt()` now strips the `0x`/`0X` prefix instead of returning `-1` for every prefixed input | 7.7k★ | merged |
 | **[NetExec](https://github.com/Pennyw0rth/NetExec/pull/1428)** | SSH login timeouts now fail cleanly instead of raising | 5.9k★ | merged |
+| **[microsoft/PyRIT](https://github.com/microsoft/PyRIT/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | `ShellCommandOutputScorer` stops flagging `rsync` and checksum pipes as shells; `PathTraversalOutputScorer` catches Windows traversal written with either slash | 4.6k★ | 2 merged |
 | **[rapid7/metasploit-payloads](https://github.com/rapid7/metasploit-payloads/pull/816)** | mask the 64-bit `st_dev` in the Python Meterpreter `stat` call so it fits the wire format | 2.1k★ | merged |
 | **[OWASP cve-lite-cli](https://github.com/OWASP/cve-lite-cli/pulls?q=is%3Apr+author%3AMRX-72+is%3Amerged)** | batches FIRST.org EPSS queries for full CVE coverage; flags override floors that exceed every declaring package's range; accurate error hints for unreadable lockfiles; scanner comparison analysis | 758★ | 4 merged |
 | **[CrowdStrike/falconpy](https://github.com/CrowdStrike/falconpy/pull/1510)** | preserve non-JSON response bodies instead of silently discarding them | 516★ | merged |
