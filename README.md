@@ -138,22 +138,27 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 <p align="center">
 <b>Languages</b><br/>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white" alt="C" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" /> <img src="https://img.shields.io/badge/Crystal-000000?style=for-the-badge&logo=crystal&logoColor=white" alt="Crystal" /> <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge" alt="C" /> <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge" alt="Go" /> <img src="https://img.shields.io/badge/Crystal-000000?style=for-the-badge" alt="Crystal" /> <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge" alt="Bash" />
 </p>
 
 <p align="center">
 <b>Low-Level &amp; RE</b><br/>
-<img src="https://img.shields.io/badge/x86--64%20Asm-6E4C13?style=for-the-badge" alt="x86-64 Asm" /> <img src="https://img.shields.io/badge/Ghidra-C00000?style=for-the-badge" alt="Ghidra" /> <img src="https://img.shields.io/badge/GDB-A42E2B?style=for-the-badge&logo=gnu&logoColor=white" alt="GDB" /> <img src="https://img.shields.io/badge/pwndbg-2B2B2B?style=for-the-badge" alt="pwndbg" /> <img src="https://img.shields.io/badge/pwntools-2B2B2B?style=for-the-badge" alt="pwntools" /> <img src="https://img.shields.io/badge/radare2-4B3A86?style=for-the-badge" alt="radare2" /> <img src="https://img.shields.io/badge/Cutter-2B2B2B?style=for-the-badge" alt="Cutter" />
+<img src="https://img.shields.io/badge/x86--64%20Asm-6E4C13?style=for-the-badge" alt="x86-64 Asm" /> <img src="https://img.shields.io/badge/Ghidra-C00000?style=for-the-badge" alt="Ghidra" /> <img src="https://img.shields.io/badge/GDB-A42E2B?style=for-the-badge" alt="GDB" /> <img src="https://img.shields.io/badge/pwndbg-2B2B2B?style=for-the-badge" alt="pwndbg" /> <img src="https://img.shields.io/badge/pwntools-2B2B2B?style=for-the-badge" alt="pwntools" /> <img src="https://img.shields.io/badge/radare2-4B3A86?style=for-the-badge" alt="radare2" /> <img src="https://img.shields.io/badge/Cutter-2B2B2B?style=for-the-badge" alt="Cutter" />
 </p>
 
 <p align="center">
 <b>Network Security</b><br/>
-<img src="https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge" alt="Nmap" /> <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark" /> <img src="https://img.shields.io/badge/tcpdump-2B2B2B?style=for-the-badge" alt="tcpdump" /> <img src="https://img.shields.io/badge/Scapy-2B2B2B?style=for-the-badge" alt="Scapy" /> <img src="https://img.shields.io/badge/NetExec-2B2B2B?style=for-the-badge" alt="NetExec" /> <img src="https://img.shields.io/badge/aircrack--ng-2B2B2B?style=for-the-badge" alt="aircrack-ng" /> <img src="https://img.shields.io/badge/Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali Linux" />
+<img src="https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge" alt="Nmap" /> <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge" alt="Wireshark" /> <img src="https://img.shields.io/badge/tcpdump-2B2B2B?style=for-the-badge" alt="tcpdump" /> <img src="https://img.shields.io/badge/Scapy-2B2B2B?style=for-the-badge" alt="Scapy" /> <img src="https://img.shields.io/badge/NetExec-2B2B2B?style=for-the-badge" alt="NetExec" /> <img src="https://img.shields.io/badge/aircrack--ng-2B2B2B?style=for-the-badge" alt="aircrack-ng" />
 </p>
 
 <p align="center">
 <b>Offensive Tooling</b><br/>
-<img src="https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white" alt="Metasploit" /> <img src="https://img.shields.io/badge/sqlmap-2B2B2B?style=for-the-badge" alt="sqlmap" /> <img src="https://img.shields.io/badge/hashcat-2B2B2B?style=for-the-badge" alt="hashcat" /> <img src="https://img.shields.io/badge/Nuclei-2B2B2B?style=for-the-badge" alt="Nuclei" /> <img src="https://img.shields.io/badge/YARA-2B2B2B?style=for-the-badge" alt="YARA" /> <img src="https://img.shields.io/badge/garak-76B900?style=for-the-badge" alt="garak" /> <img src="https://img.shields.io/badge/Nikto-2B2B2B?style=for-the-badge" alt="Nikto" />
+<img src="https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge" alt="Metasploit" /> <img src="https://img.shields.io/badge/sqlmap-2B2B2B?style=for-the-badge" alt="sqlmap" /> <img src="https://img.shields.io/badge/hashcat-2B2B2B?style=for-the-badge" alt="hashcat" /> <img src="https://img.shields.io/badge/Nuclei-2B2B2B?style=for-the-badge" alt="Nuclei" /> <img src="https://img.shields.io/badge/YARA-2B2B2B?style=for-the-badge" alt="YARA" /> <img src="https://img.shields.io/badge/garak-76B900?style=for-the-badge" alt="garak" /> <img src="https://img.shields.io/badge/Nikto-2B2B2B?style=for-the-badge" alt="Nikto" />
+</p>
+
+<p align="center">
+<b>OS</b><br/>
+<img src="https://img.shields.io/badge/BlackArch-2B2B2B?style=for-the-badge" alt="BlackArch" /> <img src="https://img.shields.io/badge/SamuraiWTF-2B2B2B?style=for-the-badge" alt="SamuraiWTF" />
 </p>
 
 ---
