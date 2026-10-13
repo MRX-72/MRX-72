@@ -136,27 +136,27 @@ zapscan -j -o report.json -p 22,80,443 10.0.0.0/24
 
 ## Tech Stack
 
-<p align="center">
+<p>
 <b>Languages</b><br/>
 Python &nbsp;·&nbsp; C++ &nbsp;·&nbsp; C &nbsp;·&nbsp; Go &nbsp;·&nbsp; Crystal &nbsp;·&nbsp; Bash
 </p>
 
-<p align="center">
+<p>
 <b>Low-Level &amp; RE</b><br/>
 x86-64 Asm &nbsp;·&nbsp; Ghidra &nbsp;·&nbsp; GDB &nbsp;·&nbsp; pwndbg &nbsp;·&nbsp; pwntools &nbsp;·&nbsp; radare2 &nbsp;·&nbsp; Cutter
 </p>
 
-<p align="center">
+<p>
 <b>Network Security</b><br/>
 Nmap &nbsp;·&nbsp; Wireshark &nbsp;·&nbsp; tcpdump &nbsp;·&nbsp; Scapy &nbsp;·&nbsp; NetExec &nbsp;·&nbsp; aircrack-ng
 </p>
 
-<p align="center">
+<p>
 <b>Offensive Tooling</b><br/>
 Metasploit &nbsp;·&nbsp; sqlmap &nbsp;·&nbsp; hashcat &nbsp;·&nbsp; Nuclei &nbsp;·&nbsp; YARA &nbsp;·&nbsp; garak &nbsp;·&nbsp; Nikto
 </p>
 
-<p align="center">
+<p>
 <b>OS</b><br/>
 BlackArch &nbsp;·&nbsp; SamuraiWTF
 </p>
